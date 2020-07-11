@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlagueMouseSpawnData
   m_EditorClassIdentifier: 
   prefab: {fileID: 1124256750590394194, guid: 96a1cb7bc65faea4ab0cc47e9b3841cb, type: 3}
-  weight: 1000
+  weight: 1
