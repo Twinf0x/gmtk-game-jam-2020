@@ -129,9 +129,10 @@ GameObject:
   - component: {fileID: 5238486715730037098}
   - component: {fileID: 5238486715730037099}
   - component: {fileID: 8943730208639734964}
-  - component: {fileID: 2011089672728778566}
-  - component: {fileID: 691725106819510228}
   - component: {fileID: 6643746810496726270}
+  - component: {fileID: 3936939987617907676}
+  - component: {fileID: 8327322130738220562}
+  - component: {fileID: 7120680721048109898}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -177,6 +178,7 @@ MonoBehaviour:
   - {fileID: 5238486715730037097}
   - {fileID: 5238486715730037098}
   movementSpeed: 5
+  currentWeapon: {fileID: 0}
 --- !u!114 &5065680983486582351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,10 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd22a522ec142c44ba6c95c9b1ce457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementComponents: []
-  weaponComponents:
-  - {fileID: 6643746810496726270}
-  - {fileID: 6643746810496726270}
+  fallbackWeapon: {fileID: 7120680721048109898}
+  controller: {fileID: 5238486715730037094}
 --- !u!114 &5238486715730037095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,70 +286,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!114 &2011089672728778566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238486715730037100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e535c71208cf515468ab02a75c1a9f53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 263157579628150425}
-  bulletPrefab: {fileID: 5837555482750618343, guid: 3ec09fe795949b84194627b16d522c15,
-    type: 3}
-  magazineSize: 100
-  firerate: 10
-  bulletSpeed: 20
-  onMagazineEmpty:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5238486715730037094}
-        m_MethodName: SwitchWeapons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &691725106819510228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238486715730037100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e535c71208cf515468ab02a75c1a9f53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 263157579628150425}
-  bulletPrefab: {fileID: 5837555482750618343, guid: 3ec09fe795949b84194627b16d522c15,
-    type: 3}
-  magazineSize: 3
-  firerate: 3
-  bulletSpeed: 5
-  onMagazineEmpty:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5238486715730037094}
-        m_MethodName: SwitchWeapons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6643746810496726270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,8 +301,104 @@ MonoBehaviour:
   firePoint: {fileID: 263157579628150425}
   bulletPrefab: {fileID: 8531987487402111348, guid: 58182a7efa9eb6ae78634eeb8e2c93fa,
     type: 3}
-  magazineSize: 250
+  magazineSize: 100
   firerate: 25
+  bulletSpeed: 7
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5238486715730037094}
+        m_MethodName: SwitchWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3936939987617907676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708d348846a7697eda89b8e6e4f22fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 263157579628150425}
+  bulletPrefab: {fileID: 5081795621409915511, guid: 8bad541a4883c50ad8ad0c3f693b70b0,
+    type: 3}
+  magazineSize: 10
+  firerate: 5
+  bulletSpeed: 10
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5238486715730037094}
+        m_MethodName: SwitchWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8327322130738220562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf93f15ac0e1d63ea9630ef10c2c3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 263157579628150425}
+  bulletPrefab: {fileID: 6267166713616835337, guid: 4d3f9cd2c39e4fa27ac71a8c05bd1840,
+    type: 3}
+  magazineSize: 5
+  firerate: 1
+  bulletSpeed: 3
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5238486715730037094}
+        m_MethodName: SwitchWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7120680721048109898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd85b82d4a70025bea121b8b7dae4ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 263157579628150425}
+  bulletPrefab: {fileID: 1450084842245505872, guid: 6fadee4fafea61d0bbbc8cef48707e91,
+    type: 3}
+  magazineSize: 17
+  firerate: 5
   bulletSpeed: 7
   onMagazineEmpty:
     m_PersistentCalls:
