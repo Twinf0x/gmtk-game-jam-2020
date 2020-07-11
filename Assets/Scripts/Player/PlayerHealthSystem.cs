@@ -8,11 +8,12 @@ public class PlayerHealthSystem : MonoBehaviour
     [SerializeField] private PlayerWeapon fallbackWeapon;
     [SerializeField] private PlayerController controller;
 
-    private List<PlayerWeapon> activeWeaponComponents;
-    private List<PlayerMovement> activeMovementComponents;
+    [HideInInspector] public List<PlayerWeapon> activeWeaponComponents;
+    [HideInInspector] public List<PlayerMovement> activeMovementComponents;
 
     private void Start()
     {
+        Debug.Log("Health System Initialize");
         activeMovementComponents = gameObject.GetComponents<PlayerMovement>().ToList();
         activeWeaponComponents = gameObject.GetComponents<PlayerWeapon>().Where(weapon => weapon != fallbackWeapon).ToList();
     }
@@ -24,14 +25,13 @@ public class PlayerHealthSystem : MonoBehaviour
             var weapon = activeWeaponComponents.ElementAt(Random.Range(0, activeWeaponComponents.Count));
             activeWeaponComponents.Remove(weapon);
             weapon.enabled = false;
+            weapon.onDeactivation?.Invoke();
 
             if(weapon == controller.currentWeapon)
             {
-                Debug.Log("deactivated active weapon");
                 controller.SwitchWeapons();
             }
 
-            Debug.Log("Active Weapons: " + activeWeaponComponents.Count.ToString());
             return;
         }
 
@@ -40,7 +40,7 @@ public class PlayerHealthSystem : MonoBehaviour
             var movement = activeMovementComponents.ElementAt(Random.Range(0, activeMovementComponents.Count));
             activeMovementComponents.Remove(movement);
             movement.enabled = false;
-            Debug.Log("Active Movement: " + activeMovementComponents.Count.ToString());
+            movement.onDeactivation?.Invoke();
             return;
         }
 
