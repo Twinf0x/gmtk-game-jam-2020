@@ -590,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pixelsPerUnit: 32
   pPUScale: 4
-  referenceScreenHeight: 0
+  referenceScreenHeight: 720
 --- !u!1 &1093601909
 GameObject:
   m_ObjectHideFlags: 0
