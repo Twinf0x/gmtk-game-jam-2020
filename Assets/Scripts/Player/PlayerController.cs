@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        activeWeapon = healthSystem.GetRandomActiveWeapon();
+        SwitchWeapons();
     }
 
     private void Update()
@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            Debug.Log(direction2D);
             activeWeapon.Fire(direction2D);
         }
     }
@@ -57,5 +56,11 @@ public class PlayerController : MonoBehaviour
     private void Move(Vector2 direction)
     {
         body.velocity = direction * movementSpeed;
+    }
+
+    public void SwitchWeapons()
+    {
+        activeWeapon = healthSystem.GetRandomActiveWeapon();
+        activeWeapon.Activate();
     }
 }

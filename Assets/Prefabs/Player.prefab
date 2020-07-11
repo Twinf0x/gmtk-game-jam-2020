@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 5238486715730037099}
   - component: {fileID: 8943730208639734964}
   - component: {fileID: 2011089672728778566}
+  - component: {fileID: 691725106819510228}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -190,6 +191,7 @@ MonoBehaviour:
   movementComponents: []
   weaponComponents:
   - {fileID: 2011089672728778566}
+  - {fileID: 691725106819510228}
 --- !u!114 &5238486715730037095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,9 +300,55 @@ MonoBehaviour:
   firePoint: {fileID: 263157579628150425}
   bulletPrefab: {fileID: 5837555482750618343, guid: 3ec09fe795949b84194627b16d522c15,
     type: 3}
-  magazineSize: 100000
+  magazineSize: 100
   firerate: 10
   bulletSpeed: 20
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5238486715730037094}
+        m_MethodName: SwitchWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &691725106819510228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e535c71208cf515468ab02a75c1a9f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 263157579628150425}
+  bulletPrefab: {fileID: 5837555482750618343, guid: 3ec09fe795949b84194627b16d522c15,
+    type: 3}
+  magazineSize: 3
+  firerate: 3
+  bulletSpeed: 5
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5238486715730037094}
+        m_MethodName: SwitchWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5238486715791091779
 GameObject:
   m_ObjectHideFlags: 0

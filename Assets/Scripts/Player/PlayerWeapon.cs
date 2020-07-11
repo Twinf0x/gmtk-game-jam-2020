@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerWeapon : PlayerHealthComponent
 {
@@ -9,9 +10,12 @@ public class PlayerWeapon : PlayerHealthComponent
     [SerializeField] private int magazineSize;
     [SerializeField] private float firerate;
     [SerializeField] private float bulletSpeed;
+    [SerializeField] private UnityEvent onMagazineEmpty;
 
     private float timeBetweenShots;
     private float timeToNextShot;
+
+    private int bulletsLeft;
 
     private void Start()
     {
@@ -27,9 +31,14 @@ public class PlayerWeapon : PlayerHealthComponent
         }
     }
 
+    public virtual void Activate()
+    {
+        bulletsLeft = magazineSize;
+    }
+
     public virtual void Fire(Vector2 direction)
     {
-        if(timeToNextShot > 0f)
+        if(timeToNextShot > 0f || bulletsLeft <= 0)
         {
             return;
         }
@@ -39,5 +48,14 @@ public class PlayerWeapon : PlayerHealthComponent
         bullet.direction = direction;
         bullet.speed = bulletSpeed;
         timeToNextShot = timeBetweenShots;
+
+        bulletsLeft--;
+        if(bulletsLeft <= 0)
+        {
+            Debug.Log("Switching weapons");
+            onMagazineEmpty?.Invoke();
+        }
+
+        Debug.Log("Bullets Left: " + bulletsLeft.ToString());
     }
 }
