@@ -9,6 +9,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     private List<PlayerWeapon> activeWeaponComponents;
     private List<PlayerMovement> activeMovementComponents;
+    private PlayerWeapon activeWeapon;
 
     private void Start()
     {
@@ -42,8 +43,16 @@ public class PlayerHealthSystem : MonoBehaviour
             return fallbackWeapon;
         }
 
-        var index = Random.Range(0, activeWeaponComponents.Count);
-        return activeWeaponComponents.ElementAt(index);
+        if(activeWeaponComponents.Count == 1)
+        {
+            return activeWeaponComponents.First();
+        }
+
+        var weaponOptions = activeWeaponComponents.Where(weapon => weapon != activeWeapon).ToList();
+
+        var index = Random.Range(0, weaponOptions.Count);
+        activeWeapon = weaponOptions.ElementAt(index);
+        return activeWeapon;
     }
 
     public void Die()
