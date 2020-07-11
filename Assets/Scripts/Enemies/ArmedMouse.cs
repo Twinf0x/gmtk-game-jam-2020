@@ -20,8 +20,12 @@ public class ArmedMouse : EnemyMouse
 
     // Update is called once per frame
     internal override void FixedUpdate() {
-        var playerdirection = transform.position - base.target.position;
-        Move(playerdirection.normalized);
+        var movementdirection = target.position - transform.position;
+        if (Random.Range(0, 2) > 0)
+        {
+            movementdirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        }
+        Move(movementdirection.normalized);
         var shootdirection = target.position - transform.position;
         Shoot(shootdirection.normalized);
     }
