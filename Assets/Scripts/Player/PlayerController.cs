@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerHealthSystem healthSystem;
     [SerializeField] private PlayerMovement[] movementDirections;
     [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private UnityEvent onSwitchedWeapons;
 
     private Vector2 currentMovementDirection;
     private float currentWeaponRotation;
@@ -62,5 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         currentWeapon = healthSystem.GetRandomActiveWeapon();
         currentWeapon.Activate();
+
+        onSwitchedWeapons?.Invoke();
     }
 }

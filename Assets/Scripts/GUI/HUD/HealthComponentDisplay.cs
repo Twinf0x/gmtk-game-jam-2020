@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class HealthComponentDisplay : MonoBehaviour
 {
     [SerializeField] private Image iconDisplay;
-    private PlayerHealthComponent displayedComponent;
+    [SerializeField] private GameObject highlightOverlay;
+    [HideInInspector] public PlayerHealthComponent displayedComponent;
     private HUDController controller;
 
     public void Initialize(HUDController controller, PlayerHealthComponent component)
@@ -20,5 +21,10 @@ public class HealthComponentDisplay : MonoBehaviour
     private void IndicateDeactivation()
     {
         iconDisplay.color = controller.GetDisabledColor();
+    }
+
+    public void ToggleHighlight()
+    {
+        highlightOverlay.SetActive(!highlightOverlay.activeInHierarchy);
     }
 }

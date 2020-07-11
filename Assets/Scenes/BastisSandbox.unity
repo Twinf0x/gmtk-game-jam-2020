@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &135718462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7554749313834780965, guid: d474ea9cce50e584592c77fed418ef84,
+    type: 3}
+  m_PrefabInstance: {fileID: 8267318199510707677}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7416414e2747134c87b926dfc7375ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &351131928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2266,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306712930}
   m_CullTransparentMesh: 0
+--- !u!114 &1380740772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1717709224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a383172c7c8f6094984b33af611c8179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1393448905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2626,9 +2650,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 135718462}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdjustHighlighting
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 135718462}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: AdjustAmmoDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5238486715730037100, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_Name
@@ -3370,6 +3449,16 @@ PrefabInstance:
       propertyPath: healthSystem
       value: 
       objectReference: {fileID: 1717709225}
+    - target: {fileID: 7554749313834780965, guid: d474ea9cce50e584592c77fed418ef84,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1380740772}
+    - target: {fileID: 7554749313834780965, guid: d474ea9cce50e584592c77fed418ef84,
+        type: 3}
+      propertyPath: ammoDisplay
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8886115851133097364, guid: d474ea9cce50e584592c77fed418ef84,
         type: 3}
       propertyPath: m_LocalPosition.x
