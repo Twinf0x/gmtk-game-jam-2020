@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class PlagueMouse : EnemyMouse
 {
-    private const float bulletSpeed = 3f;
+    private const float bulletSpeed = 1f;
     [SerializeField] internal Transform firePoint;
     [SerializeField] internal GameObject bulletPrefab;
-    internal float timeBetweenSpits;
+    [SerializeField] internal float timeBetweenSpits;
     internal float timeToNextSpit;
+    internal int bulletAmount = 6;
+    internal float bulletSpread = 360f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        base.movementSpeed = 2f;
-    }
+    internal Vector2 movementdirection = Vector2.zero;
 
     // Update is called once per frame
     internal override void FixedUpdate() {
-        var playerdirection = base.target.position - transform.position;
-        Move(playerdirection.normalized);
-
-        if (base.body.position.x < 30) {
-            Spit(playerdirection);
+        if (timeToNextSpit > 0f)
+        {
+            Move(movementdirection);
+            timeToNextSpit -= Time.fixedDeltaTime;
+            return;
         }
+
+        movementdirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        var playerdirection = base.target.position - transform.position;
+        Spit(playerdirection.normalized);
     }
 
     private void Move(Vector2 direction) {
@@ -36,9 +38,21 @@ public class PlagueMouse : EnemyMouse
         }
 
         timeToNextSpit = timeBetweenSpits;
-        var bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        var bullet = bulletObject.GetComponent<Bullet>();
-        bullet.direction = transform.position - base.target.position;
-        bullet.speed = bulletSpeed;
+
+        var degreesPerStep = bulletSpread / bulletAmount;
+        var offset = bulletSpread / 2;
+
+        for (int i = 0; i < bulletAmount; i++)
+        {
+            var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+            var bulletComponent = bullet.GetComponent<Bullet>();
+            var bulletDirection = Quaternion.AngleAxis(offset, Vector3.forward) * direction;
+            offset -= degreesPerStep;
+
+            bulletComponent.direction = bulletDirection;
+            bulletComponent.speed = bulletSpeed;
+            Destroy(bullet, 2f);
+        }
     }
 }
