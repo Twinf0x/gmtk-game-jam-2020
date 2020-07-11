@@ -5,25 +5,25 @@ using UnityEngine.Events;
 
 public class PlayerWeapon : PlayerHealthComponent
 {
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private int magazineSize;
-    [SerializeField] private float firerate;
-    [SerializeField] private float bulletSpeed;
-    [SerializeField] private UnityEvent onMagazineEmpty;
+    [SerializeField] internal Transform firePoint;
+    [SerializeField] internal GameObject bulletPrefab;
+    [SerializeField] internal int magazineSize;
+    [SerializeField] internal float firerate;
+    [SerializeField] internal float bulletSpeed;
+    [SerializeField] internal UnityEvent onMagazineEmpty;
 
-    private float timeBetweenShots;
-    private float timeToNextShot;
+    internal float timeBetweenShots;
+    internal float timeToNextShot;
 
-    private int bulletsLeft;
+    internal int bulletsLeft;
 
-    private void Start()
+    internal virtual void Start()
     {
         timeBetweenShots = 1f / firerate;
         timeToNextShot = 0f;
     }
 
-    private void Update()
+    internal virtual void Update()
     {
         if(timeToNextShot > 0f)
         {
@@ -43,11 +43,12 @@ public class PlayerWeapon : PlayerHealthComponent
             return;
         }
 
+        timeToNextShot = timeBetweenShots;
+
         var bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         var bullet = bulletObject.GetComponent<Bullet>();
         bullet.direction = direction;
         bullet.speed = bulletSpeed;
-        timeToNextShot = timeBetweenShots;
 
         bulletsLeft--;
         if(bulletsLeft <= 0)
@@ -55,7 +56,5 @@ public class PlayerWeapon : PlayerHealthComponent
             Debug.Log("Switching weapons");
             onMagazineEmpty?.Invoke();
         }
-
-        Debug.Log("Bullets Left: " + bulletsLeft.ToString());
     }
 }

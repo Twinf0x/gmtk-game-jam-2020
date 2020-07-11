@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 currentMovementDirection;
     private float currentWeaponRotation;
 
-    private PlayerWeapon activeWeapon;
+    [HideInInspector] public PlayerWeapon currentWeapon = null;
 
     private void Start()
     {
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            activeWeapon.Fire(direction2D);
+            currentWeapon.Fire(direction2D);
         }
     }
 
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchWeapons()
     {
-        activeWeapon = healthSystem.GetRandomActiveWeapon();
-        activeWeapon.Activate();
+        currentWeapon = healthSystem.GetRandomActiveWeapon();
+        currentWeapon.Activate();
     }
 }
