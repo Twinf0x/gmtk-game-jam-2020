@@ -71,5 +71,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: BananaBullet
       objectReference: {fileID: 0}
+    - target: {fileID: 6871953703877665180, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: damageOnHit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871953703877665180, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: damageTag
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec09fe795949b84194627b16d522c15, type: 3}
