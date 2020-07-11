@@ -29,7 +29,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
             if(weapon == controller.currentWeapon)
             {
-                controller.SwitchWeapons();
+                StartCoroutine(controller.SwitchWeapons(controller.reloadTime));
             }
 
             return;
