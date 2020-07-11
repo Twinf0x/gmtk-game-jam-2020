@@ -181,6 +181,9 @@ MonoBehaviour:
   - {fileID: 5238486715730037098}
   dash: {fileID: -3020041902648993732}
   movementSpeed: 5
+  onSwitchedWeapons:
+    m_PersistentCalls:
+      m_Calls: []
   currentWeapon: {fileID: 0}
 --- !u!114 &5065680983486582351
 MonoBehaviour:
@@ -500,14 +503,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb812f2fbc8d2220ad7082495bfbd19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hudIcon: {fileID: 0}
+  hudIcon: {fileID: 21300000, guid: 03a3f00999683ce46b0747dd26ab7bdb, type: 3}
   onDeactivation:
     m_PersistentCalls:
       m_Calls: []
-  direction: 0
-  viableInputs: 
-  body: {fileID: 0}
+  direction: 4
+  viableInputs: 20000000
+  body: {fileID: 5238486715730037099}
   active: 0
+  speed: 25
 --- !u!1 &5238486715791091779
 GameObject:
   m_ObjectHideFlags: 0
