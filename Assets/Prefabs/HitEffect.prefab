@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7466241692168139101}
   - component: {fileID: 4382593213505107743}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HitEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
