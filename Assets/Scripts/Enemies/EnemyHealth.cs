@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private GameObject corpsePrefab;
     private float currentHealth;
 
-    private void Start()
+    internal void Start()
     {
         currentHealth = maxHealth;
     }
