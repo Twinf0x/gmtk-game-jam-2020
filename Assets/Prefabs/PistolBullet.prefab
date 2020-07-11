@@ -51,6 +51,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 80261156830873519, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7976837497307082302, guid: 5d0083301180815419741b247015f4ad,
+        type: 3}
     - target: {fileID: 3511038175199574364, guid: 3ec09fe795949b84194627b16d522c15,
         type: 3}
       propertyPath: m_Color.r
@@ -66,6 +72,21 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.49501604
       objectReference: {fileID: 0}
+    - target: {fileID: 4504643108465681430, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504643108465681430, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504643108465681430, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 5837555482750618343, guid: 3ec09fe795949b84194627b16d522c15,
         type: 3}
       propertyPath: m_Name
@@ -76,5 +97,11 @@ PrefabInstance:
       propertyPath: damageOnHit
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6871953703877665180, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: hitEffectPrefab
+      value: 
+      objectReference: {fileID: 4463525686375024556, guid: 148641f8ee00991459c4fb060193a385,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec09fe795949b84194627b16d522c15, type: 3}
