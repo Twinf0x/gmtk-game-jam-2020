@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 8943730208639734964}
   - component: {fileID: 2011089672728778566}
   - component: {fileID: 691725106819510228}
+  - component: {fileID: 6643746810496726270}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -190,8 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementComponents: []
   weaponComponents:
-  - {fileID: 2011089672728778566}
-  - {fileID: 691725106819510228}
+  - {fileID: 6643746810496726270}
+  - {fileID: 6643746810496726270}
 --- !u!114 &5238486715730037095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +336,38 @@ MonoBehaviour:
   magazineSize: 3
   firerate: 3
   bulletSpeed: 5
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5238486715730037094}
+        m_MethodName: SwitchWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6643746810496726270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd162586cb162025cb2d855586ab97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 263157579628150425}
+  bulletPrefab: {fileID: 8531987487402111348, guid: 58182a7efa9eb6ae78634eeb8e2c93fa,
+    type: 3}
+  magazineSize: 250
+  firerate: 25
+  bulletSpeed: 7
   onMagazineEmpty:
     m_PersistentCalls:
       m_Calls:
