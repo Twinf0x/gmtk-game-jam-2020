@@ -587,6 +587,58 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &525608553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525608549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2130f060e7effee95bafb1ec15fa44e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 783361782}
+  bulletPrefab: {fileID: 1221424622638776402, guid: ee6cdf6ecb76a4caf866bbf8dd7dde6f,
+    type: 3}
+  magazineSize: 4
+  firerate: 2
+  bulletSpeed: 3
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 525608558}
+        m_MethodName: SwitchWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &525608554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525608549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1469d62aaa4c673dbfbe7bdbc710125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  magazineSize: 0
+  firerate: 0
+  bulletSpeed: 0
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &525608558 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
@@ -2644,7 +2696,7 @@ PrefabInstance:
     - target: {fileID: 5065680983486582351, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: weaponComponents.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5065680983486582351, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
@@ -2661,6 +2713,11 @@ PrefabInstance:
       propertyPath: weaponComponents.Array.data[3]
       value: 
       objectReference: {fileID: 525608552}
+    - target: {fileID: 5065680983486582351, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: weaponComponents.Array.data[4]
+      value: 
+      objectReference: {fileID: 525608553}
     - target: {fileID: 5238486715730037093, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
