@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,10 +13,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerMovement[] movementDirections;
     [SerializeField] private Dash dash;
     [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] public float reloadTime = 0.5f;
     [SerializeField] private UnityEvent onSwitchedWeapons;
 
     [SerializeField] private SpriteRenderer characterSpriteRenderer;
     [SerializeField] private Animator characterAnimator;
+
+    [SerializeField] private GameObject reloadIndicator;
+    [SerializeField] private Image reloadIndicatorFill;
 
     private Vector2 currentMovementDirection;
     private float currentWeaponRotation;
@@ -28,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         weaponXRight = weapon.position.x;
         weaponXLeft = weaponXRight * -1;
-        SwitchWeapons();
+        StartCoroutine(SwitchWeapons(0f));
     }
 
     private void Update()
@@ -100,6 +105,21 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchWeapons()
     {
+        StartCoroutine(SwitchWeapons(reloadTime));
+    }
+
+    public IEnumerator SwitchWeapons(float timer)
+    {
+        reloadIndicator.SetActive(true);
+        var timeLeft = timer;
+
+        while(timeLeft > 0f)
+        {
+            timeLeft -= Time.deltaTime;
+            reloadIndicatorFill.fillAmount = 1f - (timeLeft / timer);
+            yield return null;
+        }
+
         if(currentWeapon != null) {
             currentWeapon.weaponRenderer.enabled = false;
         }
@@ -107,6 +127,7 @@ public class PlayerController : MonoBehaviour
         currentWeapon.Activate();
         currentWeapon.weaponRenderer.enabled = true;
 
+        reloadIndicator.SetActive(false);
         onSwitchedWeapons?.Invoke();
     }
 }
