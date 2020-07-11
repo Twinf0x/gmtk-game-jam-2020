@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 8327322130738220562}
   - component: {fileID: 7120680721048109898}
   - component: {fileID: 5780467699901923845}
+  - component: {fileID: -3020041902648993732}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -178,6 +179,7 @@ MonoBehaviour:
   - {fileID: 5238486715730037096}
   - {fileID: 5238486715730037097}
   - {fileID: 5238486715730037098}
+  dash: {fileID: -3020041902648993732}
   movementSpeed: 5
   currentWeapon: {fileID: 0}
 --- !u!114 &5065680983486582351
@@ -485,6 +487,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-3020041902648993732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb812f2fbc8d2220ad7082495bfbd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudIcon: {fileID: 0}
+  onDeactivation:
+    m_PersistentCalls:
+      m_Calls: []
+  direction: 0
+  viableInputs: 
+  body: {fileID: 0}
+  active: 0
 --- !u!1 &5238486715791091779
 GameObject:
   m_ObjectHideFlags: 0

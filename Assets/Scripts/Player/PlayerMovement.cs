@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum MovementDirection { Up, Down, Left, Right }
+public enum MovementDirection { Up, Down, Left, Right, Dash}
 
 public class PlayerMovement : PlayerHealthComponent
 {
     #region Inspector
-    [SerializeField] private MovementDirection direction;
-    [SerializeField] private KeyCode[] viableInputs;
+    [SerializeField] internal MovementDirection direction;
+    [SerializeField] internal KeyCode[] viableInputs;
     #endregion
 
     public Vector2 Value { get; private set; }
 
-    private void Update()
+    internal virtual void Update()
     {
         foreach(var key in viableInputs)
         {
@@ -27,7 +27,7 @@ public class PlayerMovement : PlayerHealthComponent
         Value = Vector2.zero;
     }
 
-    private Vector2 GetDirection (MovementDirection direction)
+    internal Vector2 GetDirection (MovementDirection direction)
     {
         switch (direction)
         {
@@ -39,6 +39,7 @@ public class PlayerMovement : PlayerHealthComponent
                 return new Vector2(-1f, 0f);
             case MovementDirection.Right:
                 return new Vector2(1f, 0f);
+
         }
 
         throw new System.Exception("Invalid movement direction");
