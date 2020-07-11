@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D body;
     [SerializeField] private PlayerHealthSystem healthSystem;
     [SerializeField] private PlayerMovement[] movementDirections;
+    [SerializeField] private Dash dash;
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private UnityEvent onSwitchedWeapons;
 
@@ -57,6 +58,10 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
+        if (dash.active) {
+            body.velocity = direction * dash.speed;
+            return;
+        }
         body.velocity = direction * movementSpeed;
     }
 
