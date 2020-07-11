@@ -114,7 +114,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -135,3 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffectPrefab: {fileID: 1008161362401170200, guid: b287ff3d2a00baa4398160272df0448d,
     type: 3}
+  body: {fileID: 6971472683008405994}
+  direction: {x: 0, y: 0}
+  speed: 0

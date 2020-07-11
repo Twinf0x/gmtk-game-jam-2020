@@ -8,7 +8,7 @@ public class PlayerWeapon : PlayerHealthComponent
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private int magazineSize;
     [SerializeField] private float firerate;
-    [SerializeField] private float bulletImpulse;
+    [SerializeField] private float bulletSpeed;
 
     private float timeBetweenShots;
     private float timeToNextShot;
@@ -34,9 +34,10 @@ public class PlayerWeapon : PlayerHealthComponent
             return;
         }
 
-        var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        var bulletBody = bullet.GetComponent<Rigidbody2D>();
-        bulletBody.AddForce(direction * bulletImpulse, ForceMode2D.Impulse);
+        var bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        var bullet = bulletObject.GetComponent<Bullet>();
+        bullet.direction = direction;
+        bullet.speed = bulletSpeed;
         timeToNextShot = timeBetweenShots;
     }
 }

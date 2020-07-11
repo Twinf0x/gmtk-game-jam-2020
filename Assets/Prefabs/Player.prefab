@@ -299,8 +299,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5837555482750618343, guid: 3ec09fe795949b84194627b16d522c15,
     type: 3}
   magazineSize: 100000
-  firerate: 1
-  bulletImpulse: 20
+  firerate: 10
+  bulletSpeed: 20
 --- !u!1 &5238486715791091779
 GameObject:
   m_ObjectHideFlags: 0

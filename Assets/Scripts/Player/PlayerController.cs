@@ -38,9 +38,12 @@ public class PlayerController : MonoBehaviour
         Vector3 lookDirection = camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         currentWeaponRotation = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
+        Vector2 direction2D = new Vector2(lookDirection.x, lookDirection.y).normalized;
+
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            activeWeapon.Fire(lookDirection.normalized);
+            Debug.Log(direction2D);
+            activeWeapon.Fire(direction2D);
         }
     }
 
