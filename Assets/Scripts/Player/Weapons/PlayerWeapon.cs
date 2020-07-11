@@ -56,7 +56,5 @@ public class PlayerWeapon : PlayerHealthComponent
             Debug.Log("Switching weapons");
             onMagazineEmpty?.Invoke();
         }
-
-        Debug.Log("Bullets Left: " + bulletsLeft.ToString());
     }
 }

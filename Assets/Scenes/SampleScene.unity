@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -485,118 +485,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &525608549 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5238486715730037100, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+--- !u!114 &525608550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3936939987617907676, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
     type: 3}
   m_PrefabInstance: {fileID: 1717709224}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &525608550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525608549}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 708d348846a7697eda89b8e6e4f22fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 783361782}
-  bulletPrefab: {fileID: 5081795621409915511, guid: 8bad541a4883c50ad8ad0c3f693b70b0,
-    type: 3}
-  magazineSize: 10
-  firerate: 5
-  bulletSpeed: 10
-  onMagazineEmpty:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 525608558}
-        m_MethodName: SwitchWeapons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &525608551
+--- !u!114 &525608551 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8327322130738220562, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1717709224}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525608549}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bf93f15ac0e1d63ea9630ef10c2c3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 783361782}
-  bulletPrefab: {fileID: 6267166713616835337, guid: 4d3f9cd2c39e4fa27ac71a8c05bd1840,
-    type: 3}
-  magazineSize: 5
-  firerate: 1
-  bulletSpeed: 3
-  onMagazineEmpty:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 525608558}
-        m_MethodName: SwitchWeapons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &525608552
+--- !u!114 &525608552 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525608549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd85b82d4a70025bea121b8b7dae4ed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 783361782}
-  bulletPrefab: {fileID: 1450084842245505872, guid: 6fadee4fafea61d0bbbc8cef48707e91,
-    type: 3}
-  magazineSize: 17
-  firerate: 5
-  bulletSpeed: 7
-  onMagazineEmpty:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 525608558}
-        m_MethodName: SwitchWeapons
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &525608558 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+  m_CorrespondingSourceObject: {fileID: 7120680721048109898, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
     type: 3}
   m_PrefabInstance: {fileID: 1717709224}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525608549}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a383172c7c8f6094984b33af611c8179, type: 3}
+  m_Script: {fileID: 11500000, guid: bd85b82d4a70025bea121b8b7dae4ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &637244055
@@ -731,12 +653,6 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5}
       - {x: -0.4330127, y: -0.25000003}
       - {x: 0.43301272, y: -0.24999994}
---- !u!4 &783361782 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 263157579628150425, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1717709224}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1176688939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2725,11 +2641,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643746810496726270, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
-        type: 3}
-      propertyPath: magazineSize
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd, type: 3}

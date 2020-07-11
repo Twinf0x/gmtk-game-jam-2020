@@ -6,10 +6,10 @@ using UnityEngine;
 public class PlayerHealthSystem : MonoBehaviour
 {
     [SerializeField] private PlayerWeapon fallbackWeapon;
+    [SerializeField] private PlayerController controller;
 
     private List<PlayerWeapon> activeWeaponComponents;
     private List<PlayerMovement> activeMovementComponents;
-    private PlayerWeapon activeWeapon;
 
     private void Start()
     {
@@ -24,6 +24,15 @@ public class PlayerHealthSystem : MonoBehaviour
             var weapon = activeWeaponComponents.ElementAt(Random.Range(0, activeWeaponComponents.Count));
             activeWeaponComponents.Remove(weapon);
             weapon.enabled = false;
+
+            if(weapon == controller.currentWeapon)
+            {
+                Debug.Log("deactivated active weapon");
+                controller.SwitchWeapons();
+            }
+
+            Debug.Log("Active Weapons: " + activeWeaponComponents.Count.ToString());
+            return;
         }
 
         if(activeMovementComponents.Count > 0)
@@ -31,6 +40,8 @@ public class PlayerHealthSystem : MonoBehaviour
             var movement = activeMovementComponents.ElementAt(Random.Range(0, activeMovementComponents.Count));
             activeMovementComponents.Remove(movement);
             movement.enabled = false;
+            Debug.Log("Active Movement: " + activeMovementComponents.Count.ToString());
+            return;
         }
 
         Die();
@@ -38,7 +49,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public PlayerWeapon GetRandomActiveWeapon()
     {
-        if(activeWeaponComponents.Count < 0)
+        if(activeWeaponComponents.Count <= 0)
         {
             return fallbackWeapon;
         }
@@ -48,11 +59,10 @@ public class PlayerHealthSystem : MonoBehaviour
             return activeWeaponComponents.First();
         }
 
-        var weaponOptions = activeWeaponComponents.Where(weapon => weapon != activeWeapon).ToList();
+        var weaponOptions = activeWeaponComponents.Where(weapon => weapon != controller.currentWeapon).ToList();
 
         var index = Random.Range(0, weaponOptions.Count);
-        activeWeapon = weaponOptions.ElementAt(index);
-        return activeWeapon;
+        return weaponOptions.ElementAt(index);
     }
 
     public void Die()
