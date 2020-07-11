@@ -24,4 +24,9 @@ public class EnemyMouse : MonoBehaviour
    private void Move(Vector2 direction) {
        body.velocity = direction * movementSpeed;
     }
+
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
 }
