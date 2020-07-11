@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3936939987617907676}
   - component: {fileID: 8327322130738220562}
   - component: {fileID: 7120680721048109898}
+  - component: {fileID: 5780467699901923845}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -434,6 +435,42 @@ MonoBehaviour:
   magazineSize: 17
   firerate: 5
   bulletSpeed: 7
+  onMagazineEmpty:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5238486715730037094}
+        m_MethodName: SwitchWeapons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5780467699901923845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2130f060e7effee95bafb1ec15fa44e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudIcon: {fileID: 21300000, guid: c89345c775ec4fd4fba7bfec2e9a7212, type: 3}
+  onDeactivation:
+    m_PersistentCalls:
+      m_Calls: []
+  firePoint: {fileID: 263157579628150425}
+  bulletPrefab: {fileID: 1221424622638776402, guid: ee6cdf6ecb76a4caf866bbf8dd7dde6f,
+    type: 3}
+  magazineSize: 4
+  firerate: 1
+  bulletSpeed: 3
   onMagazineEmpty:
     m_PersistentCalls:
       m_Calls:
