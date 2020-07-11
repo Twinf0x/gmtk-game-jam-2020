@@ -98,8 +98,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 933813827
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 76b230d3760581f4586e17f978161fc7, type: 3}
   m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 8327322130738220562}
   - component: {fileID: 7120680721048109898}
   - component: {fileID: 5780467699901923845}
+  - component: {fileID: -3020041902648993732}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -178,7 +179,11 @@ MonoBehaviour:
   - {fileID: 5238486715730037096}
   - {fileID: 5238486715730037097}
   - {fileID: 5238486715730037098}
+  dash: {fileID: -3020041902648993732}
   movementSpeed: 5
+  onSwitchedWeapons:
+    m_PersistentCalls:
+      m_Calls: []
   currentWeapon: {fileID: 0}
 --- !u!114 &5065680983486582351
 MonoBehaviour:
@@ -317,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd162586cb162025cb2d855586ab97c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hudIcon: {fileID: 21300000, guid: c89345c775ec4fd4fba7bfec2e9a7212, type: 3}
+  hudIcon: {fileID: 7144583015058605669, guid: 175f2039c1fd4a64899b4da4ae65c41e, type: 3}
   onDeactivation:
     m_PersistentCalls:
       m_Calls: []
@@ -353,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708d348846a7697eda89b8e6e4f22fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hudIcon: {fileID: 21300000, guid: c89345c775ec4fd4fba7bfec2e9a7212, type: 3}
+  hudIcon: {fileID: 6407226241554960098, guid: 175f2039c1fd4a64899b4da4ae65c41e, type: 3}
   onDeactivation:
     m_PersistentCalls:
       m_Calls: []
@@ -389,7 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf93f15ac0e1d63ea9630ef10c2c3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hudIcon: {fileID: 21300000, guid: c89345c775ec4fd4fba7bfec2e9a7212, type: 3}
+  hudIcon: {fileID: -4254059877319897387, guid: 175f2039c1fd4a64899b4da4ae65c41e,
+    type: 3}
   onDeactivation:
     m_PersistentCalls:
       m_Calls: []
@@ -461,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2130f060e7effee95bafb1ec15fa44e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hudIcon: {fileID: 21300000, guid: c89345c775ec4fd4fba7bfec2e9a7212, type: 3}
+  hudIcon: {fileID: 6820856509940793013, guid: 175f2039c1fd4a64899b4da4ae65c41e, type: 3}
   onDeactivation:
     m_PersistentCalls:
       m_Calls: []
@@ -485,6 +491,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-3020041902648993732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb812f2fbc8d2220ad7082495bfbd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudIcon: {fileID: 21300000, guid: 03a3f00999683ce46b0747dd26ab7bdb, type: 3}
+  onDeactivation:
+    m_PersistentCalls:
+      m_Calls: []
+  direction: 4
+  viableInputs: 20000000
+  body: {fileID: 5238486715730037099}
+  active: 0
+  speed: 25
 --- !u!1 &5238486715791091779
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,8 +579,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 933813827
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c89345c775ec4fd4fba7bfec2e9a7212, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

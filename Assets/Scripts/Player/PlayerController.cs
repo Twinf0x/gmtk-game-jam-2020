@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D body;
     [SerializeField] private PlayerHealthSystem healthSystem;
     [SerializeField] private PlayerMovement[] movementDirections;
+    [SerializeField] private Dash dash;
     [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private UnityEvent onSwitchedWeapons;
 
     private Vector2 currentMovementDirection;
     private float currentWeaponRotation;
@@ -55,6 +58,10 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
+        if (dash.active) {
+            body.velocity = direction * dash.speed;
+            return;
+        }
         body.velocity = direction * movementSpeed;
     }
 
@@ -62,5 +69,7 @@ public class PlayerController : MonoBehaviour
     {
         currentWeapon = healthSystem.GetRandomActiveWeapon();
         currentWeapon.Activate();
+
+        onSwitchedWeapons?.Invoke();
     }
 }

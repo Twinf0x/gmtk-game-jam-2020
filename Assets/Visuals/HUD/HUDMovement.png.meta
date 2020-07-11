@@ -1,52 +1,52 @@
 fileFormatVersion: 2
-guid: 5d0083301180815419741b247015f4ad
+guid: 34591339e0a06e24383cd01837fec0fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 874343242196921964
-    second: Bullets_Banana
+      213: -8041679906332194696
+    second: HUD_Up_Red
   - first:
-      213: -7976837497307082302
-    second: Bullets_Shotgun
+      213: 786311668400250283
+    second: HUD_Down_Red
   - first:
-      213: -7803065417098437583
-    second: Bullets_Catling
+      213: -966446880808722022
+    second: HUD_Right_Red
   - first:
-      213: 7431529995326980795
-    second: Bullets_Rocket_0
+      213: -2556309884878264235
+    second: HUD_Left_Red
   - first:
-      213: -7779215486825634471
-    second: Bullets_Rocket_1
+      213: -5325148696663382731
+    second: HUD_Dash_Red
   - first:
-      213: 830317617348258784
-    second: Bullets_Laser
+      213: -5808070124260439251
+    second: HUD_Up_Grey
   - first:
-      213: 6112890488319390909
-    second: Bullets_Banana_Open
+      213: -9156817786019715620
+    second: HUD_Down_Grey
   - first:
-      213: 1757937406519661826
-    second: Bullets_Explosion_Big_0
+      213: -166656902598616020
+    second: HUD_Right_Grey
   - first:
-      213: -2121471355247410076
-    second: Bullets_Explosion_Big_2
+      213: -5056317829622570957
+    second: HUD_Left_Grey
   - first:
-      213: 3619374306951625730
-    second: Bullets_Explosion_Big_3
+      213: -7066178164595394636
+    second: HUD_Dash_Grey
   - first:
-      213: -7398920399615116625
-    second: Bullets_Explosion_Small_0
+      213: -6117919333490845330
+    second: HUD_Up_White
   - first:
-      213: 1017609225550985244
-    second: Bullets_Explosion_Small_1
+      213: 3310757898433843813
+    second: HUD_Down_White
   - first:
-      213: 2941505409271155289
-    second: Bullets_Explosion_Small_2
+      213: 3727605126204720641
+    second: HUD_Right_White
   - first:
-      213: -3507833246552792370
-    second: Bullets_Explosion_Small_3
+      213: -2770966739481614433
+    second: HUD_Left_White
   - first:
-      213: -5417137058416166357
-    second: Bullets_Explosion_Big_1
+      213: -1925334501897032750
+    second: HUD_Dash_White
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -144,159 +144,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bullets_Banana
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6e29eadb8a422c00800000000000000
-      internalID: 874343242196921964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Shotgun
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 80
-        width: 6
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c1defd2f849c4190800000000000000
-      internalID: -7976837497307082302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Catling
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 80
-        width: 6
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13c56b67851f5b390800000000000000
-      internalID: -7803065417098437583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Rocket_0
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 67
-        width: 13
-        height: 23
-      alignment: 9
-      pivot: {x: 0.46153846, y: 0.5217391}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb200252829122760800000000000000
-      internalID: 7431529995326980795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Rocket_1
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 64
-        width: 13
-        height: 26
-      alignment: 9
-      pivot: {x: 0.46153846, y: 0.5769231}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9556a841bbcaa0490800000000000000
-      internalID: -7779215486825634471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Laser
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ebaac84971e58b00800000000000000
-      internalID: 830317617348258784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Banana_Open
+      name: HUD_Up_Red
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 16
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db4342bf28955d450800000000000000
-      internalID: 6112890488319390909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Explosion_Big_0
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
+        width: 46
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -305,19 +158,208 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 205d9fcd1c2756810800000000000000
-      internalID: 1757937406519661826
+      spriteID: 8784ca95bb6366090800000000000000
+      internalID: -8041679906332194696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_Explosion_Big_2
+      name: HUD_Down_Red
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 64
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badddbddb4a89ea00800000000000000
+      internalID: 786311668400250283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Right_Red
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 64
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91ac1faead7692f0800000000000000
+      internalID: -966446880808722022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Left_Red
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 64
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558e20024b9268cd0800000000000000
+      internalID: -2556309884878264235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Dash_Red
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 64
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535ae3769754916b0800000000000000
+      internalID: -5325148696663382731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Up_Grey
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bc5e49ef6956fa0800000000000000
+      internalID: -5808070124260439251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Down_Grey
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 32
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd5e05f0db27ce080800000000000000
+      internalID: -9156817786019715620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Right_Grey
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 32
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c1e391e6aefadf0800000000000000
+      internalID: -166656902598616020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Left_Grey
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 32
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3306fd539b954d9b0800000000000000
+      internalID: -5056317829622570957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Dash_Grey
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 32
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b77ba3c564efed90800000000000000
+      internalID: -7066178164595394636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Up_White
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 46
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -326,19 +368,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 464cf4dda050f82e0800000000000000
-      internalID: -2121471355247410076
+      spriteID: e6998c2c7c8c81ba0800000000000000
+      internalID: -6117919333490845330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_Explosion_Big_3
+      name: HUD_Down_White
       rect:
         serializedVersion: 2
-        x: 32
+        x: 46
         y: 0
-        width: 32
+        width: 46
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -347,103 +389,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20cf60381c99a3230800000000000000
-      internalID: 3619374306951625730
+      spriteID: 562d77974cc22fd20800000000000000
+      internalID: 3310757898433843813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_Explosion_Small_0
+      name: HUD_Right_White
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: faabc830911c15990800000000000000
-      internalID: -7398920399615116625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Explosion_Small_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c187029f2364f1e00800000000000000
-      internalID: 1017609225550985244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Explosion_Small_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95a4f70c59352d820800000000000000
-      internalID: 2941505409271155289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Explosion_Small_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec26aef5f3ca15fc0800000000000000
-      internalID: -3507833246552792370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bullets_Explosion_Big_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
+        x: 92
+        y: 0
+        width: 46
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -452,8 +410,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2aff7deb8672d4b0800000000000000
-      internalID: -5417137058416166357
+      spriteID: 1068b52dc1d1bb330800000000000000
+      internalID: 3727605126204720641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Left_White
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97a6c08e6c8b89d0800000000000000
+      internalID: -2770966739481614433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUD_Dash_White
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbaf9ca876d745e0800000000000000
+      internalID: -1925334501897032750
       vertices: []
       indices: 
       edges: []

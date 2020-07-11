@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class HUDController : MonoBehaviour
@@ -12,10 +14,14 @@ public class HUDController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private PlayerHealthSystem healthSystem;
+    [SerializeField] private PlayerController playerController;
+
+    private List<HealthComponentDisplay> componentDisplays;
+    private HealthComponentDisplay highlightedDisplay = null;
 
     private void Start()
     {
-        Debug.Log("HUD Initialize");
+        componentDisplays = new List<HealthComponentDisplay>();
         AddComponentDisplays();
     }
 
@@ -38,6 +44,19 @@ public class HUDController : MonoBehaviour
         var display = displayObject.GetComponent<HealthComponentDisplay>();
 
         display.Initialize(this, component);
+
+        componentDisplays.Add(display);
+    }
+
+    public void AdjustHighlighting()
+    {
+        if(highlightedDisplay != null)
+            highlightedDisplay.ToggleHighlight();
+
+        highlightedDisplay = componentDisplays.Where(display => display.displayedComponent == playerController.currentWeapon).First();
+
+        if (highlightedDisplay != null)
+            highlightedDisplay.ToggleHighlight();
     }
 
     public Color GetDisabledColor()
