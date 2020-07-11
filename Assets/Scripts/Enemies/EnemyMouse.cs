@@ -6,10 +6,9 @@ public class EnemyMouse : MonoBehaviour
 {
    [SerializeField] internal Rigidbody2D body;
    [SerializeField] internal EnemyHealth health;
-   [SerializeField] internal Vector2 position;
-   [SerializeField] internal Vector2 movement;
    [SerializeField] internal float movementSpeed;
-   [SerializeField] internal Transform target;
+   
+    internal Transform target;
 
    internal void Start() {
        // call out loud
