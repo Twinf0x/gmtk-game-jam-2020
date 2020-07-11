@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: d445cad905ec53145be8fbbcb0f3601f
+guid: 65681c39ace5ab24fb76a03de4e30393
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7746275471694328932
-    second: Spacecat_0
+      213: -7541642142940281356
+    second: FloorTiles_0
   - first:
-      213: 3888355119111665290
-    second: Spacecat_1
+      213: -5011470259765113924
+    second: FloorTiles_1
   - first:
-      213: 1976252967572854095
-    second: Spacecat_2
+      213: 1710095572349779241
+    second: FloorTiles_2
   - first:
-      213: 4499255555330274122
-    second: Spacecat_3
+      213: 3524080185309826975
+    second: FloorTiles_3
   - first:
-      213: -1471712650442471609
-    second: Spacecat_4
+      213: 8010965151286131362
+    second: FloorTiles_4
   - first:
-      213: 4945944564399608425
-    second: Spacecat_5
+      213: 197108035511669246
+    second: FloorTiles_5
   - first:
-      213: -5325770357074395171
-    second: Spacecat_6
+      213: 8399621105713349723
+    second: FloorTiles_6
   - first:
-      213: -4709031873058055613
-    second: Spacecat_7
+      213: 3940331283288470972
+    second: FloorTiles_7
   - first:
-      213: 1672977091759356242
-    second: Spacecat_8
+      213: -2918068548943628659
+    second: FloorTiles_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -126,190 +126,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spacecat_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46479aeff7c408b60800000000000000
-      internalID: 7746275471694328932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spacecat_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a86f833216636f530800000000000000
-      internalID: 3888355119111665290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spacecat_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f45dd767a9f0d6b10800000000000000
-      internalID: 1976252967572854095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spacecat_3
+      name: FloorTiles_0
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a43f929e611907e30800000000000000
-      internalID: 4499255555330274122
+      spriteID: 4f5cde6ad64b65790800000000000000
+      internalID: -7541642142940281356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spacecat_4
+      name: FloorTiles_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb0444c95ea37ab0800000000000000
+      internalID: -5011470259765113924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FloorTiles_2
       rect:
         serializedVersion: 2
         x: 32
         y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7478de2542d639be0800000000000000
-      internalID: -1471712650442471609
+      spriteID: 92d70e1dcda7bb710800000000000000
+      internalID: 1710095572349779241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spacecat_5
+      name: FloorTiles_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96210d7606683a440800000000000000
-      internalID: 4945944564399608425
+      spriteID: 2aa71767c5aac2f60800000000000000
+      internalID: 8010965151286131362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spacecat_6
+      name: FloorTiles_5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddf764fc3101716b0800000000000000
-      internalID: -5325770357074395171
+      spriteID: ef15c07c6b44cb200800000000000000
+      internalID: 197108035511669246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spacecat_7
+      name: FloorTiles_7
       rect:
         serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34ad162067826aeb0800000000000000
-      internalID: -4709031873058055613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spacecat_8
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 16
         y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5625, y: 0.1875}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 259bea71dcb973710800000000000000
-      internalID: 1672977091759356242
+      spriteID: cb5b4c5ec6edea630800000000000000
+      internalID: 3940331283288470972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FloorTiles_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d86b9f58d10f087d0800000000000000
+      internalID: -2918068548943628659
       vertices: []
       indices: 
       edges: []
