@@ -14,13 +14,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private UnityEvent onSwitchedWeapons;
 
+    [SerializeField] private SpriteRenderer characterSpriteRenderer;
+    [SerializeField] private Animator characterAnimator;
+
     private Vector2 currentMovementDirection;
     private float currentWeaponRotation;
+    private float weaponXRight;
+    private float weaponXLeft;
 
     [HideInInspector] public PlayerWeapon currentWeapon = null;
 
     private void Start()
     {
+        weaponXRight = weapon.position.x;
+        weaponXLeft = weaponXRight * -1;
         SwitchWeapons();
     }
 
@@ -38,6 +45,8 @@ public class PlayerController : MonoBehaviour
             currentMovementDirection += direction.Value;
         }
 
+        HandleCharacterAnimator(currentMovementDirection);
+
         Vector3 lookDirection = camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         currentWeaponRotation = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
@@ -46,6 +55,30 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             currentWeapon.Fire(direction2D);
+        }
+    }
+
+    private void HandleCharacterAnimator(Vector2 movement) {
+        Vector2 mouseWorldPos = camera.ScreenToWorldPoint(Input.mousePosition);
+        if(mouseWorldPos.x < transform.position.x) {
+            characterSpriteRenderer.flipX = true;
+            if(currentWeapon != null) {
+                Vector3 weaponPosition = new Vector3(weaponXLeft, weapon.localPosition.y, weapon.localPosition.z);
+                weapon.localPosition = weaponPosition;
+                weapon.localScale = new Vector3(1, -1, 1);
+            }
+        } else {
+            characterSpriteRenderer.flipX = false;
+            if (currentWeapon != null) {
+                Vector3 weaponPosition = new Vector3(weaponXRight, weapon.localPosition.y, weapon.localPosition.z);
+                weapon.localPosition = weaponPosition;
+                weapon.localScale = new Vector3(1, 1, 1);
+            }
+        }
+        if(movement.magnitude > 0.1f) {
+            characterAnimator.SetBool("isWalking", true);
+        } else {
+            characterAnimator.SetBool("isWalking", false);
         }
     }
 
@@ -67,8 +100,12 @@ public class PlayerController : MonoBehaviour
 
     public void SwitchWeapons()
     {
+        if(currentWeapon != null) {
+            currentWeapon.weaponRenderer.enabled = false;
+        }
         currentWeapon = healthSystem.GetRandomActiveWeapon();
         currentWeapon.Activate();
+        currentWeapon.weaponRenderer.enabled = true;
 
         onSwitchedWeapons?.Invoke();
     }

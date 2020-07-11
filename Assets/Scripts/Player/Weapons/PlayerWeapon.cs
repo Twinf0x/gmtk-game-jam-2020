@@ -11,6 +11,7 @@ public class PlayerWeapon : PlayerHealthComponent
     [SerializeField] internal float firerate;
     [SerializeField] internal float bulletSpeed;
     [SerializeField] internal UnityEvent onMagazineEmpty;
+    [SerializeField] internal SpriteRenderer weaponRenderer;
 
     internal float timeBetweenShots;
     internal float timeToNextShot;
