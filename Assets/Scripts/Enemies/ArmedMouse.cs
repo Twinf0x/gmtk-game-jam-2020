@@ -7,20 +7,27 @@ public class ArmedMouse : EnemyMouse
     private const float bulletSpeed = 3f;
     [SerializeField] internal Transform firePoint;
     [SerializeField] internal GameObject bulletPrefab;
-    internal float timeBetweenShots;
+    [SerializeField] internal float timeBetweenShots;
     internal float timeToNextShot;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        base.movementSpeed = 1f;
+        if(timeToNextShot > 0f)
+        {
+            timeToNextShot -= Time.deltaTime;
+        }
     }
 
     // Update is called once per frame
     internal override void FixedUpdate() {
-        var playerdirection = transform.position - base.target.position;
-        Move(playerdirection.normalized);
-        Shoot(playerdirection);
+        var movementdirection = target.position - transform.position;
+        if (Random.Range(0, 2) > 0)
+        {
+            movementdirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        }
+        Move(movementdirection.normalized);
+        var shootdirection = target.position - transform.position;
+        Shoot(shootdirection.normalized);
     }
 
     private void Move(Vector2 direction) {
@@ -35,7 +42,7 @@ public class ArmedMouse : EnemyMouse
         timeToNextShot = timeBetweenShots;
         var bulletObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         var bullet = bulletObject.GetComponent<Bullet>();
-        bullet.direction = transform.position - base.target.position;
+        bullet.direction = direction;
         bullet.speed = bulletSpeed;
     }
 }

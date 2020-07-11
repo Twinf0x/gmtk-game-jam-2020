@@ -14,10 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 2138162228562445652}
   health: {fileID: 4409824424734900064}
-  position: {x: 10, y: 10}
-  movement: {x: 0, y: 0}
   movementSpeed: 0
-  target: {fileID: 0}
 --- !u!1001 &5367184942768917022
 PrefabInstance:
   m_ObjectHideFlags: 0
