@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ShotGun : PlayerWeapon
 {
+
+    private int bulletAmount = 3;
+    private float bulletSpread = 45f;
+
     internal override void Start(){
         base.Start();
     }
@@ -17,6 +21,35 @@ public class ShotGun : PlayerWeapon
     }
 
     public override void Fire(Vector2 direction) {
-        base.Fire(direction);
+        if(timeToNextShot > 0f || bulletsLeft <= 0)
+        {
+            return;
+        }
+
+        timeToNextShot = timeBetweenShots;
+
+        var degreesPerStep = bulletSpread / bulletAmount;
+        var offset = bulletSpread / 2;
+
+        for(int i = 0; i < bulletAmount; i++)
+        {
+            var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            
+            var bulletComponent = bullet.GetComponent<Bullet>();
+            var bulletDirection = Quaternion.AngleAxis(offset, Vector3.forward) * direction;
+            offset -= degreesPerStep;
+
+            bulletComponent.direction = bulletDirection;
+            bulletComponent.speed = bulletSpeed;
+        }
+
+        bulletsLeft--;
+        if(bulletsLeft <= 0)
+        {
+            Debug.Log("Switching weapons");
+            onMagazineEmpty?.Invoke();
+        }
+
+        Debug.Log("Bullets Left: " + bulletsLeft.ToString());
     }
 }

@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private GameObject hitEffectPrefab;
-    [SerializeField] private Rigidbody2D body;
+    [SerializeField] internal GameObject hitEffectPrefab;
+    [SerializeField] internal Rigidbody2D body;
 
     [HideInInspector] public Vector2 direction;
     [HideInInspector] public float speed;
 
-    private void FixedUpdate()
+    internal void FixedUpdate()
     {
         body.MovePosition(new Vector2(transform.position.x, transform.position.y) + (direction * speed * Time.fixedDeltaTime));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    internal virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if(hitEffectPrefab != null)
         {
