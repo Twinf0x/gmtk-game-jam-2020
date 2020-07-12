@@ -76,6 +76,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5837555482750618343, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyBullet
+      objectReference: {fileID: 0}
     - target: {fileID: 6871953703877665180, guid: 3ec09fe795949b84194627b16d522c15,
         type: 3}
       propertyPath: damageTag
