@@ -148,10 +148,9 @@ public class PlayerController : MonoBehaviour
 
         reloadIndicator.SetActive(false);
 
-        if (healthSystem.activeWeaponComponents.Capacity < 1) {
+        if (healthSystem.activeWeaponComponents.Count >= 1) {
             onSwitchedWeapons?.Invoke();
         }
-
     }
 
     public IEnumerator SwitchWeapons(float timer, int index)
