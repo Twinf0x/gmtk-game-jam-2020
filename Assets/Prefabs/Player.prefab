@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a383172c7c8f6094984b33af611c8179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startWeaponIndex: -1
   camera: {fileID: 0}
   weapon: {fileID: 4150004284956983596}
   body: {fileID: 5238486715730037099}

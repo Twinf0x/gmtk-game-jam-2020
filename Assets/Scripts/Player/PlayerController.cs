@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Finally! Wish for a specific weapon here:")]
+    [SerializeField] private int startWeaponIndex = -1;
+
+    [Header("All the other, boring, usual stuff")]
     [SerializeField] private Camera camera;
     [SerializeField] private Transform weapon;
     [SerializeField] private Rigidbody2D body;
@@ -33,7 +37,15 @@ public class PlayerController : MonoBehaviour
     {
         weaponXRight = weapon.position.x;
         weaponXLeft = weaponXRight * -1;
-        StartCoroutine(SwitchWeapons(0f));
+
+        if(startWeaponIndex == -1)
+        {
+            StartCoroutine(SwitchWeapons(0f));
+        }
+        else
+        {
+            StartCoroutine(SwitchWeapons(0f, startWeaponIndex));
+        }
     }
 
     private void Update()
@@ -111,6 +123,10 @@ public class PlayerController : MonoBehaviour
     public IEnumerator SwitchWeapons(float timer)
     {
         reloadIndicator.SetActive(true);
+
+        if (currentWeapon != null)
+            currentWeapon.OnDeactivation();
+
         var timeLeft = timer;
 
         while(timeLeft > 0f)
@@ -124,6 +140,34 @@ public class PlayerController : MonoBehaviour
             currentWeapon.weaponRenderer.enabled = false;
         }
         currentWeapon = healthSystem.GetRandomActiveWeapon();
+        currentWeapon.Activate();
+        currentWeapon.weaponRenderer.enabled = true;
+
+        reloadIndicator.SetActive(false);
+        onSwitchedWeapons?.Invoke();
+    }
+
+    public IEnumerator SwitchWeapons(float timer, int index)
+    {
+        reloadIndicator.SetActive(true);
+
+        if(currentWeapon != null)
+            currentWeapon.OnDeactivation();
+
+        var timeLeft = timer;
+
+        while (timeLeft > 0f)
+        {
+            timeLeft -= Time.deltaTime;
+            reloadIndicatorFill.fillAmount = 1f - (timeLeft / timer);
+            yield return null;
+        }
+
+        if (currentWeapon != null)
+        {
+            currentWeapon.weaponRenderer.enabled = false;
+        }
+        currentWeapon = healthSystem.GetWeaponAtIndex(index);
         currentWeapon.Activate();
         currentWeapon.weaponRenderer.enabled = true;
 
