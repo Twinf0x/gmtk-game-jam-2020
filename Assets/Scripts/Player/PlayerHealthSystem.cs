@@ -177,6 +177,8 @@ public class PlayerHealthSystem : MonoBehaviour
     public void Die()
     {
         gameOverScreenController.ShowScreen();
+        AudioManager.instance.Stop("CombatMusic");
+        AudioManager.instance.StartCoroutine("MenuMusic");
         Destroy(controller.gameObject);
     }
 }
