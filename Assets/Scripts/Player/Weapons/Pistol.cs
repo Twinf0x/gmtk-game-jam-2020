@@ -17,9 +17,11 @@ public class Pistol : PlayerWeapon
     }
 
     public override void Fire(Vector2 direction) {
-        base.Fire(direction);
-        if (fireSoundName.Length > 0) {
-            AudioManager.instance.Play(fireSoundName, Random.Range(-0.2f, 0.2f));
+        if (timeToNextShot <= 0f && bulletsLeft > 0) {
+            if (fireSoundName.Length > 0) {
+                AudioManager.instance.Play(fireSoundName);
+            }
         }
+        base.Fire(direction);
     }
 }
