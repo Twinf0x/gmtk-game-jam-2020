@@ -15,6 +15,8 @@ public class Dash : PlayerMovement
     [HideInInspector] public bool isActive;
     [HideInInspector] public float speed = 3f;
 
+    private string soundName = "Dash";
+
     internal void Start() {
         timeToNextDash = 0f;
     }
@@ -33,6 +35,8 @@ public class Dash : PlayerMovement
         timeToNextDash = timeBetweenDashes;
         isActive = true;
         playerHealthSystem.isInvincible = true;
+
+        AudioManager.instance.Play(soundName);
 
         yield return new WaitForSeconds(duration);
         isActive = false;
