@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PistolMouseSpawnData
   m_EditorClassIdentifier: 
   prefab: {fileID: 1599607405732413975, guid: 448d94297d0a2044b9fcce8688a7d306, type: 3}
-  weight: 3
+  weight: 30

@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ShotGun : PlayerWeapon
 {
-
-    private int bulletAmount = 3;
-    private float bulletSpread = 45f;
+    [SerializeField] private int bulletAmount = 3;
+    [SerializeField] private float bulletSpread = 45f;
 
     internal override void Start(){
         base.Start();
@@ -24,6 +23,9 @@ public class ShotGun : PlayerWeapon
         if(timeToNextShot > 0f || bulletsLeft <= 0)
         {
             return;
+        }
+        if (fireSoundName.Length > 0) {
+            AudioManager.instance.Play(fireSoundName, Random.Range(-0.2f, 0.2f));
         }
 
         timeToNextShot = timeBetweenShots;
@@ -43,13 +45,12 @@ public class ShotGun : PlayerWeapon
             bulletComponent.speed = bulletSpeed;
         }
 
+        CameraShaker.instance.AddShakeEvent(shakeData);
+
         bulletsLeft--;
         if(bulletsLeft <= 0)
         {
-            Debug.Log("Switching weapons");
             onMagazineEmpty?.Invoke();
         }
-
-        Debug.Log("Bullets Left: " + bulletsLeft.ToString());
     }
 }

@@ -30,6 +30,10 @@ public class EnemySpawner : MonoBehaviour
     {
         spawnTimer -= Time.deltaTime;
 
+        if (playerTransform == null) {
+            return;
+        }
+
         if(Vector3.Distance(transform.position, playerTransform.position) < playerDistanceThreshold)
         {
             return;

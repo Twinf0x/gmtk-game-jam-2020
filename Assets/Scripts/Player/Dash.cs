@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Dash : PlayerMovement
 {
+    [SerializeField] private PlayerHealthSystem playerHealthSystem;
     [SerializeField] private Rigidbody2D body;
+    [SerializeField] internal float timeBetweenDashes = 7f;
+    [SerializeField] internal Vector3 breatherSize = new Vector3(5f, 5f, 1f);
 
-    internal float timeBetweenDashes = 7f;
     internal float timeToNextDash;
 
-    public bool active;
+    [HideInInspector] public bool isActive;
+    [HideInInspector] public float speed = 3f;
 
-    public float speed = 3f;
+    private string soundName = "Dash";
 
     internal void Start() {
         timeToNextDash = 0f;
@@ -23,17 +27,20 @@ public class Dash : PlayerMovement
             return;
         }
         if (Input.GetKey(KeyCode.Space)) {
-            StartCoroutine(activateDash());
+            StartCoroutine(ActivateDash());
         }
     }
 
-
-
-    public IEnumerator activateDash(float duration = 0.5f) {
+    public IEnumerator ActivateDash(float duration = 0.5f) {
         timeToNextDash = timeBetweenDashes;
-        active = true;
+        isActive = true;
+        playerHealthSystem.isInvincible = true;
+
+        AudioManager.instance.Play(soundName);
 
         yield return new WaitForSeconds(duration);
-        active = false;
+        isActive = false;
+        playerHealthSystem.isInvincible = false;
+        StartCoroutine(playerHealthSystem.GiveBreathingRoom(breatherSize));
     }
 }

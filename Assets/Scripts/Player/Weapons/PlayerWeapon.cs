@@ -12,6 +12,8 @@ public class PlayerWeapon : PlayerHealthComponent
     [SerializeField] internal float bulletSpeed;
     [SerializeField] internal UnityEvent onMagazineEmpty;
     [SerializeField] internal SpriteRenderer weaponRenderer;
+    [SerializeField] internal string fireSoundName;
+    [SerializeField] internal ShakeTransformEventData shakeData;
 
     internal float timeBetweenShots;
     internal float timeToNextShot;
@@ -37,11 +39,19 @@ public class PlayerWeapon : PlayerHealthComponent
         bulletsLeft = magazineSize;
     }
 
+    internal virtual void OnDeactivation()
+    {
+
+    }
+
     public virtual void Fire(Vector2 direction)
     {
         if(timeToNextShot > 0f || bulletsLeft <= 0)
         {
             return;
+        }
+        if(fireSoundName.Length > 0) {
+            AudioManager.instance.Play(fireSoundName, Random.Range(-0.2f, 0.2f));
         }
 
         timeToNextShot = timeBetweenShots;
@@ -51,10 +61,12 @@ public class PlayerWeapon : PlayerHealthComponent
         bullet.direction = direction;
         bullet.speed = bulletSpeed;
 
+        CameraShaker.instance.AddShakeEvent(shakeData);
+
         bulletsLeft--;
         if(bulletsLeft <= 0)
         {
-            Debug.Log("Switching weapons");
+            // Debug.Log("Switching weapons");
             onMagazineEmpty?.Invoke();
         }
     }
