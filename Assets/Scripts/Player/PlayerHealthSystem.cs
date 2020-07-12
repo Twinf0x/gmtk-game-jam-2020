@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerHealthSystem : MonoBehaviour
 {
@@ -12,6 +14,14 @@ public class PlayerHealthSystem : MonoBehaviour
     [SerializeField] private GameObject breatherObject;
     [SerializeField] private GameObject weaponDamagedHint;
     [SerializeField] private GameObject movementDamagedHint;
+
+    [Header("Post Processing")]
+    [SerializeField] private Volume postProcessing;
+    [HideInInspector] private ChromaticAberration chromaticAberration;
+    [SerializeField] private float normalAbberation = 0f;
+    [HideInInspector] private float currentAbberation = 0f;
+    [SerializeField] private float maxAbberation = 0.3f;
+    [SerializeField] private float hitAbberation = 0.5f;
 
     [Header("Settings")]
     [SerializeField] private float breatherTime = 0.5f;
@@ -26,6 +36,10 @@ public class PlayerHealthSystem : MonoBehaviour
         Debug.Log("Health System Initialize");
         activeMovementComponents = gameObject.GetComponents<PlayerMovement>().ToList();
         activeWeaponComponents = gameObject.GetComponents<PlayerWeapon>().Where(weapon => weapon != fallbackWeapon).ToList();
+
+        chromaticAberration = postProcessing.sharedProfile.components.Where(component => component is ChromaticAberration).First() as ChromaticAberration;
+        currentAbberation = normalAbberation;
+        chromaticAberration.intensity.value = currentAbberation;
     }
 
     public void DeactivateRandomComponent()
@@ -36,6 +50,8 @@ public class PlayerHealthSystem : MonoBehaviour
         }
 
         StartCoroutine(GiveBreathingRoom(breatherMaxSize));
+        StartCoroutine(AdjustChromaticAbberationOnHit());
+
         if(activeWeaponComponents.Count > 0)
         {
             var weapon = activeWeaponComponents.ElementAt(Random.Range(0, activeWeaponComponents.Count));
@@ -79,6 +95,39 @@ public class PlayerHealthSystem : MonoBehaviour
             yield return null;
         }
         breatherObject.SetActive(false);
+    }
+
+    private IEnumerator AdjustChromaticAbberationOnHit(float timer = 0.33f)
+    {
+        var targetAbberation = currentAbberation + hitAbberation;
+        var duration = timer / 2f;
+        var passedTime = 0f;
+
+        while(passedTime < duration)
+        {
+            chromaticAberration.intensity.value = Mathf.Lerp(currentAbberation, targetAbberation, passedTime / duration);
+            passedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        AdjustCurrentAbberation();
+
+        while(passedTime > 0f)
+        {
+            chromaticAberration.intensity.value = Mathf.Lerp(currentAbberation, targetAbberation, passedTime / duration);
+            passedTime -= Time.deltaTime;
+            yield return null;
+        }
+
+        chromaticAberration.intensity.value = currentAbberation;
+    }
+
+    private void AdjustCurrentAbberation()
+    {
+        int activeComponentAmount = activeWeaponComponents.Count + activeMovementComponents.Count;
+        float healthPercentage = activeComponentAmount / 10f;
+
+        currentAbberation = Mathf.Lerp(normalAbberation, maxAbberation, healthPercentage);
     }
 
     private IEnumerator TurnOnForSeconds(GameObject target, float timer)

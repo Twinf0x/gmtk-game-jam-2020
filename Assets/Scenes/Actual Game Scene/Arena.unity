@@ -1750,6 +1750,11 @@ PrefabInstance:
       propertyPath: movementDamagedHint
       value: 
       objectReference: {fileID: 161721482}
+    - target: {fileID: 5065680983486582351, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: postProcessing
+      value: 
+      objectReference: {fileID: 435822420}
     - target: {fileID: 5238486715730037093, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
