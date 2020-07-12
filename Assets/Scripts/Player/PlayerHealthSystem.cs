@@ -65,6 +65,11 @@ public class PlayerHealthSystem : MonoBehaviour
         return weaponOptions.ElementAt(index);
     }
 
+    public PlayerWeapon GetWeaponAtIndex(int index)
+    {
+        return activeWeaponComponents.ElementAt(index);
+    }
+
     public void Die()
     {
         //TODO

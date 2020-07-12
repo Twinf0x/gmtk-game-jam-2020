@@ -37,6 +37,11 @@ public class PlayerWeapon : PlayerHealthComponent
         bulletsLeft = magazineSize;
     }
 
+    internal virtual void OnDeactivation()
+    {
+
+    }
+
     public virtual void Fire(Vector2 direction)
     {
         if(timeToNextShot > 0f || bulletsLeft <= 0)

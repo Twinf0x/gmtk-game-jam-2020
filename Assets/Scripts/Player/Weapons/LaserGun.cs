@@ -29,6 +29,13 @@ public class LaserGun : PlayerWeapon
         isActive = true;
     }
 
+    internal override void OnDeactivation()
+    {
+        base.OnDeactivation();
+        renderer.enabled = false;
+        isActive = false;
+    }
+
     public override void Fire(Vector2 direction) {
 
         if(bulletsLeft <= 0) {
