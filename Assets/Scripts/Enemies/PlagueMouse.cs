@@ -16,6 +16,9 @@ public class PlagueMouse : EnemyMouse
 
     // Update is called once per frame
     internal override void FixedUpdate() {
+        if (target == null) {
+            return;
+        }
         if (timeToNextSpit > 0f)
         {
             Move(movementdirection);

@@ -108,5 +108,6 @@ public class PlayerHealthSystem : MonoBehaviour
     public void Die()
     {
         gameOverScreenController.ShowScreen();
+        Destroy(controller.gameObject);
     }
 }

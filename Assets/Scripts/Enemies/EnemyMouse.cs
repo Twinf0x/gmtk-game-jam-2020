@@ -16,6 +16,9 @@ public class EnemyMouse : MonoBehaviour
     }
 
     internal virtual void FixedUpdate() {
+        if (target == null) {
+            return;
+        }
         var playerdirection = target.position - transform.position;
         Move(playerdirection.normalized);
     }
