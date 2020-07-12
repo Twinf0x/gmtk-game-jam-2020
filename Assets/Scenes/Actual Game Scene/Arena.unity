@@ -339,7 +339,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Laser
-    clip: {fileID: 8300000, guid: 170997ac797d76a43867395b8208a5f5, type: 3}
+    clip: {fileID: 8300000, guid: 7358679f5db759747a9f8b924471fbc0, type: 3}
     volume: 0.3
     pitch: 1
     loop: 1
@@ -375,7 +375,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: PlayerHit
-    clip: {fileID: 8300000, guid: cbd6851870788a0479eb624074da8253, type: 3}
+    clip: {fileID: 8300000, guid: 7ca3292171a3567499752051e76eba58, type: 3}
     volume: 0.2
     pitch: 1
     loop: 0
@@ -387,13 +387,13 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: BananaHit
-    clip: {fileID: 8300000, guid: ae208628135af87409966e5647740b96, type: 3}
+    clip: {fileID: 8300000, guid: 76cbe5977117d734c83157aef7c44235, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SpitHit
-    clip: {fileID: 8300000, guid: ae208628135af87409966e5647740b96, type: 3}
+    clip: {fileID: 8300000, guid: 76cbe5977117d734c83157aef7c44235, type: 3}
     volume: 0.5
     pitch: 0.4
     loop: 0
@@ -408,6 +408,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c25cb102fbddbe64a9dad36c23dbb3f6, type: 3}
     volume: 0.15
     pitch: 1.3
+    loop: 0
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: 7ca3292171a3567499752051e76eba58, type: 3}
+    volume: 0.1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &316961782
@@ -2000,11 +2006,6 @@ PrefabInstance:
         type: 3}
       propertyPath: onSwitchedWeapons.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
-        type: 3}
-      propertyPath: startWeaponIndex
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5238486715730037100, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
