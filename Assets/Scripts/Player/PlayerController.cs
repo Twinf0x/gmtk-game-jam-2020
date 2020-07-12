@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        weaponXRight = weapon.position.x;
+        weaponXRight = weapon.localPosition.x;
         weaponXLeft = weaponXRight * -1;
         ScoreController.instance.ResetScores();
 

@@ -7,10 +7,11 @@ public class EnemyMouse : MonoBehaviour
     [SerializeField] internal Rigidbody2D body;
     [SerializeField] internal EnemyHealth health;
     [SerializeField] internal float movementSpeed;
+    [SerializeField] internal SpriteRenderer characterRenderer;
    
     internal Transform target;
 
-    internal void Start() {
+    internal virtual void Start() {
         // call out loud
         movementSpeed = 2f;
     }
@@ -21,6 +22,11 @@ public class EnemyMouse : MonoBehaviour
         }
         var playerdirection = target.position - transform.position;
         Move(playerdirection.normalized);
+        if (playerdirection.x < 0) {
+            characterRenderer.flipX = true;
+        } else {
+            characterRenderer.flipX = false;
+        }
     }
 
     private void Move(Vector2 direction) {
