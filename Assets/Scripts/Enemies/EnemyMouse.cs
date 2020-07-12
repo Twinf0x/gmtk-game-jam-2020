@@ -28,4 +28,23 @@ public class EnemyMouse : MonoBehaviour
     {
         this.target = target;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.gameObject.tag != "Player")
+        {
+            return;
+        }
+
+        var playerHealth = collision.collider.gameObject.GetComponent<PlayerHealthSystem>();
+        if(playerHealth == null)
+        {
+            return;
+        }
+
+        playerHealth.DeactivateRandomComponent();
+
+        var ownHealth = gameObject.GetComponent<EnemyHealth>();
+        ownHealth.Die();
+    }
 }

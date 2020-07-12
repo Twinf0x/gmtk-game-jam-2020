@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         Instantiate(corpsePrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
