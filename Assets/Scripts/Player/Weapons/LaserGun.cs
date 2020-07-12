@@ -54,6 +54,8 @@ public class LaserGun : PlayerWeapon
         }
 
         renderer.SetPosition(0, firePoint.position);
+        renderer.startWidth = 0.1f;
+        renderer.endWidth = 1;
         renderer.SetPosition(1, firePoint.position + new Vector3(direction.x, direction.y, 0) * laserRange);
 
         bulletsLeft--;
