@@ -19,6 +19,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     [HideInInspector] public List<PlayerWeapon> activeWeaponComponents;
     [HideInInspector] public List<PlayerMovement> activeMovementComponents;
+    [HideInInspector] public bool isInvincible = false;
 
     private void Start()
     {
@@ -29,7 +30,12 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public void DeactivateRandomComponent()
     {
-        StartCoroutine(GiveBreathingRoom());
+        if (isInvincible)
+        {
+            return;
+        }
+
+        StartCoroutine(GiveBreathingRoom(breatherMaxSize));
         if(activeWeaponComponents.Count > 0)
         {
             var weapon = activeWeaponComponents.ElementAt(Random.Range(0, activeWeaponComponents.Count));
@@ -61,14 +67,14 @@ public class PlayerHealthSystem : MonoBehaviour
         Die();
     }
 
-    private IEnumerator GiveBreathingRoom()
+    public IEnumerator GiveBreathingRoom(Vector3 maxSize)
     {
         breatherObject.SetActive(true);
         var breatherDefaultSize = new Vector3(1f, 1f, 1f);
         var timer = breatherTime;
         while(timer > 0f)
         {
-            breatherObject.transform.localScale = Vector3.Lerp(breatherDefaultSize, breatherMaxSize, 1f - (timer / breatherTime));
+            breatherObject.transform.localScale = Vector3.Lerp(breatherDefaultSize, maxSize, 1f - (timer / breatherTime));
             timer -= Time.deltaTime;
             yield return null;
         }

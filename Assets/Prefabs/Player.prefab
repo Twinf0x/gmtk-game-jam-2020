@@ -790,6 +790,7 @@ GameObject:
   - component: {fileID: 5238486715730037096}
   - component: {fileID: 5238486715730037097}
   - component: {fileID: 5238486715730037098}
+  - component: {fileID: -3020041902648993732}
   - component: {fileID: 5238486715730037099}
   - component: {fileID: 8943730208639734964}
   - component: {fileID: 6643746810496726270}
@@ -797,7 +798,6 @@ GameObject:
   - component: {fileID: 8327322130738220562}
   - component: {fileID: 7120680721048109898}
   - component: {fileID: 5780467699901923845}
-  - component: {fileID: -3020041902648993732}
   - component: {fileID: 1228077899982970908}
   m_Layer: 8
   m_Name: Player
@@ -873,10 +873,13 @@ MonoBehaviour:
   controller: {fileID: 5238486715730037094}
   gameOverScreenController: {fileID: 0}
   breatherObject: {fileID: 4872083543737450150}
+  weaponDamagedHint: {fileID: 0}
+  movementDamagedHint: {fileID: 0}
   breatherTime: 0.5
   breatherMaxSize: {x: 20, y: 20, z: 1}
   activeWeaponComponents: []
   activeMovementComponents: []
+  isInvincible: 0
 --- !u!114 &5238486715730037095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +954,31 @@ MonoBehaviour:
       m_Calls: []
   direction: 3
   viableInputs: 6400000013010000
+--- !u!114 &-3020041902648993732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238486715730037100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb812f2fbc8d2220ad7082495bfbd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudIcon: {fileID: -1925334501897032750, guid: 34591339e0a06e24383cd01837fec0fd,
+    type: 3}
+  onDeactivation:
+    m_PersistentCalls:
+      m_Calls: []
+  direction: 4
+  viableInputs: 20000000
+  playerHealthSystem: {fileID: 5065680983486582351}
+  body: {fileID: 5238486715730037099}
+  timeBetweenDashes: 7
+  breatherSize: {x: 5, y: 5, z: 1}
+  isActive: 0
+  speed: 25
 --- !u!50 &5238486715730037099
 Rigidbody2D:
   serializedVersion: 4
@@ -1174,28 +1202,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6654211730944066375}
---- !u!114 &-3020041902648993732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238486715730037100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb812f2fbc8d2220ad7082495bfbd19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hudIcon: {fileID: -1925334501897032750, guid: 34591339e0a06e24383cd01837fec0fd,
-    type: 3}
-  onDeactivation:
-    m_PersistentCalls:
-      m_Calls: []
-  direction: 4
-  viableInputs: 20000000
-  body: {fileID: 5238486715730037099}
-  active: 0
-  speed: 25
 --- !u!114 &1228077899982970908
 MonoBehaviour:
   m_ObjectHideFlags: 0
