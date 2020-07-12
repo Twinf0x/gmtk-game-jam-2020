@@ -7,6 +7,7 @@ public class PlayerHealthSystem : MonoBehaviour
 {
     [SerializeField] private PlayerWeapon fallbackWeapon;
     [SerializeField] private PlayerController controller;
+    [SerializeField] private GameOverScreenController gameOverScreenController;
 
     [HideInInspector] public List<PlayerWeapon> activeWeaponComponents;
     [HideInInspector] public List<PlayerMovement> activeMovementComponents;
@@ -72,6 +73,6 @@ public class PlayerHealthSystem : MonoBehaviour
 
     public void Die()
     {
-        //TODO
+        gameOverScreenController.ShowScreen();
     }
 }
