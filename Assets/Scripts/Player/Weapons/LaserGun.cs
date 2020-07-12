@@ -26,7 +26,7 @@ public class LaserGun : PlayerWeapon
         base.Update();
         renderer.enabled = Input.GetKey(KeyCode.Mouse0) && isActive;
         if(Input.GetKeyDown(KeyCode.Mouse0) && isActive && fireSoundName.Length > 0) {
-            Debug.Log("<b>LAAAZOOR!!!</b>");
+            // Debug.Log("<b>LAAAZOOR!!!</b>");
             AudioManager.instance.Play(fireSoundName);
         } else if(!renderer.enabled) {
             AudioManager.instance.Stop(fireSoundName);

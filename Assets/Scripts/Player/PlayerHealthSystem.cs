@@ -37,7 +37,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Health System Initialize");
+        // Debug.Log("Health System Initialize");
         activeMovementComponents = gameObject.GetComponents<PlayerMovement>().ToList();
         activeWeaponComponents = gameObject.GetComponents<PlayerWeapon>().Where(weapon => weapon != fallbackWeapon).ToList();
 
