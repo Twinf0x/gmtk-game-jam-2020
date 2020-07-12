@@ -1083,7 +1083,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6267166713616835337, guid: 4d3f9cd2c39e4fa27ac71a8c05bd1840,
     type: 3}
   magazineSize: 5
-  firerate: 1
+  firerate: 2
   bulletSpeed: 3
   onMagazineEmpty:
     m_PersistentCalls:
@@ -1157,8 +1157,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1221424622638776402, guid: ee6cdf6ecb76a4caf866bbf8dd7dde6f,
     type: 3}
   magazineSize: 4
-  firerate: 1
-  bulletSpeed: 3
+  firerate: 2
+  bulletSpeed: 4
   onMagazineEmpty:
     m_PersistentCalls:
       m_Calls:
@@ -1233,7 +1233,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6655042449763375754}
-  damagePerSecond: 500
+  damagePerSecond: 5000
   castRadius: 0.5
   laserRange: 25
   layerMask:
@@ -1361,7 +1361,7 @@ LineRenderer:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
-    numCapVertices: 0
+    numCapVertices: 2
     alignment: 0
     textureMode: 0
     shadowBias: 0.5
