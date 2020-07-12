@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4961718767281462459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4961718767281462457}
+  - component: {fileID: 4961718767281462458}
+  m_Layer: 0
+  m_Name: AudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4961718767281462457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961718767281462459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4961718767281462458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961718767281462459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153d2ec8c5d48bf4aa52b1832bf6b74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Defeat
+    clip: {fileID: 8300000, guid: 2669d900336c218469a11165abcc00f7, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fire
+    clip: {fileID: 8300000, guid: b65a2ec87b0b2224db4f3cd7ba7ad3a6, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Laser
+    clip: {fileID: 8300000, guid: 7358679f5db759747a9f8b924471fbc0, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: RocketFire
+    clip: {fileID: 8300000, guid: 9472bbc179c4cc44fa386f0a0bf17d6c, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: RocketHit
+    clip: {fileID: 8300000, guid: 996e9cc8a706bbe45bd3f3c1001942c7, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Catling
+    clip: {fileID: 8300000, guid: 5186ea1c30c7cd645936102d119185cc, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BananaThrow
+    clip: {fileID: 8300000, guid: c08864399fb7e644a8078d02223b5bf5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Spit
+    clip: {fileID: 8300000, guid: c08864399fb7e644a8078d02223b5bf5, type: 3}
+    volume: 0.7
+    pitch: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerHit
+    clip: {fileID: 8300000, guid: 7ca3292171a3567499752051e76eba58, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyHit
+    clip: {fileID: 8300000, guid: e1d372df888daaa4b8b2ea9374cd31b8, type: 3}
+    volume: 0.1
+    pitch: 0.5
+    loop: 0
+    source: {fileID: 0}
+  - name: BananaHit
+    clip: {fileID: 8300000, guid: 76cbe5977117d734c83157aef7c44235, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SpitHit
+    clip: {fileID: 8300000, guid: 76cbe5977117d734c83157aef7c44235, type: 3}
+    volume: 0.3
+    pitch: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: ShotgunFire
+    clip: {fileID: 8300000, guid: c25cb102fbddbe64a9dad36c23dbb3f6, type: 3}
+    volume: 0.3
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+  - name: PistolFire
+    clip: {fileID: 8300000, guid: c25cb102fbddbe64a9dad36c23dbb3f6, type: 3}
+    volume: 0.15
+    pitch: 1.3
+    loop: 0
+    source: {fileID: 0}
+  - name: Dash
+    clip: {fileID: 8300000, guid: 20e44c8eeb3cf154f997aab56058fd2b, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CombatMusic
+    clip: {fileID: 8300000, guid: 716febefcc5f48841a046dd27487c81e, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: d069670b6d3127b47a7b1f23ee330ddf, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

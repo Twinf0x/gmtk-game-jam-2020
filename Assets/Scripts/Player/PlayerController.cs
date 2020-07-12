@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
         weaponXRight = weapon.localPosition.x;
         weaponXLeft = weaponXRight * -1;
         ScoreController.instance.ResetScores();
+        AudioManager.instance.Play("CombatMusic");
 
         if(startWeaponIndex == -1)
         {

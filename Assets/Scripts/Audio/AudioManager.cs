@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
             sound.source.loop = sound.loop;
         }
 
-        Play("Doom");
+        Play("MenuMusic");
     }
 
     public void Play(string name)
