@@ -60,6 +60,8 @@ public class LaserGun : PlayerWeapon
         renderer.SetPosition(0, firePoint.position);
         renderer.SetPosition(1, firePoint.position + new Vector3(direction.x, direction.y, 0) * laserRange);
 
+        CameraShaker.instance.AddShakeEvent(shakeData);
+
         bulletsLeft--;
         if(bulletsLeft <= 0)
         {

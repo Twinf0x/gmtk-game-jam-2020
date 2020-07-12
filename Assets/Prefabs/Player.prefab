@@ -875,6 +875,12 @@ MonoBehaviour:
   breatherObject: {fileID: 4872083543737450150}
   weaponDamagedHint: {fileID: 0}
   movementDamagedHint: {fileID: 0}
+  postProcessing: {fileID: 0}
+  normalAbberation: 0
+  maxAbberation: 0.3
+  hitAbberation: 0.5
+  cameraShaker: {fileID: 0}
+  shakeData: {fileID: 11400000, guid: a7f8ec5a2f3517f489984b57c8ccc1c1, type: 2}
   breatherTime: 0.5
   breatherMaxSize: {x: 20, y: 20, z: 1}
   activeWeaponComponents: []
@@ -1053,6 +1059,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6640687484936616803}
+  cameraShaker: {fileID: 0}
+  shakeData: {fileID: 11400000, guid: 8dda7f1b9450692479ff78598299f623, type: 2}
 --- !u!114 &3936939987617907676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,8 +1080,8 @@ MonoBehaviour:
   firePoint: {fileID: 4956003545812007037}
   bulletPrefab: {fileID: 5081795621409915511, guid: 8bad541a4883c50ad8ad0c3f693b70b0,
     type: 3}
-  magazineSize: 10
-  firerate: 5
+  magazineSize: 5
+  firerate: 2.5
   bulletSpeed: 10
   onMagazineEmpty:
     m_PersistentCalls:
@@ -1090,6 +1098,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 7848199943627705745}
+  cameraShaker: {fileID: 0}
+  shakeData: {fileID: 11400000, guid: 4c17a2b3b951905429e02a24cfcf70b6, type: 2}
+  bulletAmount: 7
+  bulletSpread: 60
 --- !u!114 &8327322130738220562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,6 +1140,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 24894562990110756}
+  cameraShaker: {fileID: 0}
+  shakeData: {fileID: 11400000, guid: 9eb84e582d675034ea2833f250872b0e, type: 2}
 --- !u!114 &7120680721048109898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,6 +1179,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6863768586591286938}
+  cameraShaker: {fileID: 0}
+  shakeData: {fileID: 11400000, guid: 94a4e492a3fe88841a277f69cf76724c, type: 2}
 --- !u!114 &5780467699901923845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,6 +1218,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6654211730944066375}
+  cameraShaker: {fileID: 0}
+  shakeData: {fileID: 11400000, guid: 3e01b9c65b1d32f4b8bd3e7b4c9ec011, type: 2}
 --- !u!114 &1228077899982970908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,6 +1257,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6655042449763375754}
+  cameraShaker: {fileID: 0}
+  shakeData: {fileID: 11400000, guid: 8052e50b368cc50439a0e4b33f71e592, type: 2}
   damagePerSecond: 5000
   castRadius: 0.5
   laserRange: 25
