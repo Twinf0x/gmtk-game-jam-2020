@@ -24,7 +24,6 @@ public class PlayerHealthSystem : MonoBehaviour
     [SerializeField] private float hitAbberation = 0.5f;
 
     [Header("Screen Shake")]
-    [SerializeField] private ShakeTransform cameraShaker;
     [SerializeField] private ShakeTransformEventData shakeData;
 
     [Header("Settings")]
@@ -55,7 +54,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
         StartCoroutine(GiveBreathingRoom(breatherMaxSize));
         StartCoroutine(AdjustChromaticAbberationOnHit());
-        cameraShaker.AddShakeEvent(shakeData);
+        CameraShaker.instance.AddShakeEvent(shakeData);
 
         if (activeWeaponComponents.Count > 0)
         {

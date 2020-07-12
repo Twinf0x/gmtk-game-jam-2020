@@ -42,7 +42,7 @@ public class ShotGun : PlayerWeapon
             bulletComponent.speed = bulletSpeed;
         }
 
-        cameraShaker.AddShakeEvent(shakeData);
+        CameraShaker.instance.AddShakeEvent(shakeData);
 
         bulletsLeft--;
         if(bulletsLeft <= 0)

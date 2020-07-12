@@ -12,7 +12,6 @@ public class PlayerWeapon : PlayerHealthComponent
     [SerializeField] internal float bulletSpeed;
     [SerializeField] internal UnityEvent onMagazineEmpty;
     [SerializeField] internal SpriteRenderer weaponRenderer;
-    [SerializeField] internal ShakeTransform cameraShaker;
     [SerializeField] internal ShakeTransformEventData shakeData;
 
     internal float timeBetweenShots;
@@ -58,7 +57,7 @@ public class PlayerWeapon : PlayerHealthComponent
         bullet.direction = direction;
         bullet.speed = bulletSpeed;
 
-        cameraShaker.AddShakeEvent(shakeData);
+        CameraShaker.instance.AddShakeEvent(shakeData);
 
         bulletsLeft--;
         if(bulletsLeft <= 0)

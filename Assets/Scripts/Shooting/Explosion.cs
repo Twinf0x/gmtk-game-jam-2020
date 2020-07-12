@@ -8,9 +8,12 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private float damageOnHit;
     [SerializeField] private string damageTag;
+    [SerializeField] private ShakeTransformEventData shakeData;
 
     private void Start()
     {
+        CameraShaker.instance.AddShakeEvent(shakeData);
+
         Vector2 position = new Vector2(transform.position.x, transform.position.y);
         var hits = Physics2D.CircleCastAll(position, range, Vector2.zero);
 

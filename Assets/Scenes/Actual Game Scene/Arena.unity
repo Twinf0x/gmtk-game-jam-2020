@@ -337,7 +337,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 325004724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e8e81031025cc40a52268633e0c002, type: 3}
+  m_Script: {fileID: 11500000, guid: cc76ff76853e4014a8911a04365fd8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &338105049
@@ -1778,12 +1778,12 @@ PrefabInstance:
         type: 3}
       propertyPath: cameraShaker
       value: 
-      objectReference: {fileID: 325004726}
+      objectReference: {fileID: 0}
     - target: {fileID: 3936939987617907676, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: cameraShaker
       value: 
-      objectReference: {fileID: 325004726}
+      objectReference: {fileID: 0}
     - target: {fileID: 4872083543737450150, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_IsActive
@@ -1813,7 +1813,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cameraShaker
       value: 
-      objectReference: {fileID: 325004726}
+      objectReference: {fileID: 0}
     - target: {fileID: 5238486715730037093, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1943,17 +1943,17 @@ PrefabInstance:
         type: 3}
       propertyPath: cameraShaker
       value: 
-      objectReference: {fileID: 325004726}
+      objectReference: {fileID: 0}
     - target: {fileID: 6643746810496726270, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: cameraShaker
       value: 
-      objectReference: {fileID: 325004726}
+      objectReference: {fileID: 0}
     - target: {fileID: 7120680721048109898, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: cameraShaker
       value: 
-      objectReference: {fileID: 325004726}
+      objectReference: {fileID: 0}
     - target: {fileID: 8246238363979621823, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
@@ -1993,7 +1993,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cameraShaker
       value: 
-      objectReference: {fileID: 325004726}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd, type: 3}
 --- !u!114 &1717709225 stripped
