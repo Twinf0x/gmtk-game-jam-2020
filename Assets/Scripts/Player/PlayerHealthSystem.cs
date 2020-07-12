@@ -10,6 +10,8 @@ public class PlayerHealthSystem : MonoBehaviour
     [SerializeField] private PlayerController controller;
     [SerializeField] private GameOverScreenController gameOverScreenController;
     [SerializeField] private GameObject breatherObject;
+    [SerializeField] private GameObject weaponDamagedHint;
+    [SerializeField] private GameObject movementDamagedHint;
 
     [Header("Settings")]
     [SerializeField] private float breatherTime = 0.5f;
@@ -40,6 +42,8 @@ public class PlayerHealthSystem : MonoBehaviour
                 StartCoroutine(controller.SwitchWeapons(controller.reloadTime));
             }
 
+            StartCoroutine(TurnOnForSeconds(weaponDamagedHint, 1f));
+
             return;
         }
 
@@ -49,6 +53,8 @@ public class PlayerHealthSystem : MonoBehaviour
             activeMovementComponents.Remove(movement);
             movement.enabled = false;
             movement.onDeactivation?.Invoke();
+
+            StartCoroutine(TurnOnForSeconds(movementDamagedHint, 1f));
             return;
         }
 
@@ -67,6 +73,13 @@ public class PlayerHealthSystem : MonoBehaviour
             yield return null;
         }
         breatherObject.SetActive(false);
+    }
+
+    private IEnumerator TurnOnForSeconds(GameObject target, float timer)
+    {
+        target.SetActive(true);
+        yield return new WaitForSeconds(timer);
+        target.SetActive(false);
     }
 
     public PlayerWeapon GetRandomActiveWeapon()
