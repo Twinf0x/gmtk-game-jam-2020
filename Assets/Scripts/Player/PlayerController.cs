@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         weaponXRight = weapon.position.x;
         weaponXLeft = weaponXRight * -1;
+        ScoreController.instance.ResetScores();
 
         if(startWeaponIndex == -1)
         {
