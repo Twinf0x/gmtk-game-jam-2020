@@ -5,10 +5,20 @@ using UnityEngine;
 public class ArmedMouse : EnemyMouse
 {
     private const float bulletSpeed = 3f;
+    [SerializeField] internal Transform weapon;
     [SerializeField] internal Transform firePoint;
     [SerializeField] internal GameObject bulletPrefab;
     [SerializeField] internal float timeBetweenShots;
     internal float timeToNextShot;
+
+    private float weaponXRight;
+    private float weaponXLeft;
+
+    internal override void Start() {
+        base.Start();
+        weaponXRight = weapon.localPosition.x;
+        weaponXLeft = weaponXRight * -1;
+    }
 
     private void Update()
     {
@@ -30,7 +40,27 @@ public class ArmedMouse : EnemyMouse
         }
         Move(movementdirection.normalized);
         var shootdirection = target.position - transform.position;
+
+        float currentWeaponRotation = Mathf.Atan2(shootdirection.y, shootdirection.x) * Mathf.Rad2Deg;
+        var temp = weapon.rotation.eulerAngles;
+        weapon.rotation = Quaternion.Euler(temp.x, temp.y, currentWeaponRotation);
+
         Shoot(shootdirection.normalized);
+        HandleCharacterAnimation(shootdirection);
+    }
+
+    private void HandleCharacterAnimation(Vector2 shootdirection) {
+        if (shootdirection.x < 0) {
+            characterRenderer.flipX = true;
+            Vector3 weaponPosition = new Vector3(weaponXLeft, weapon.localPosition.y, weapon.localPosition.z);
+            weapon.localPosition = weaponPosition;
+            weapon.localScale = new Vector3(1, -1, 1);
+        } else {
+            characterRenderer.flipX = false;
+            Vector3 weaponPosition = new Vector3(weaponXRight, weapon.localPosition.y, weapon.localPosition.z);
+            weapon.localPosition = weaponPosition;
+            weapon.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     private void Move(Vector2 direction) {

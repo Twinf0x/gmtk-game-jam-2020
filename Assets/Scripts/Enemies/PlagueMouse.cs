@@ -29,6 +29,11 @@ public class PlagueMouse : EnemyMouse
         movementdirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
         var playerdirection = base.target.position - transform.position;
         Spit(playerdirection.normalized);
+        if (playerdirection.x < 0) {
+            characterRenderer.flipX = true;
+        } else {
+            characterRenderer.flipX = false;
+        }
     }
 
     private void Move(Vector2 direction) {
