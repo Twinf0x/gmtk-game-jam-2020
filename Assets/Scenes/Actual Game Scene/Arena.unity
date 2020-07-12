@@ -296,6 +296,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161721482}
   m_CullTransparentMesh: 0
+--- !u!1 &325004724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325004725}
+  - component: {fileID: 325004726}
+  m_Layer: 0
+  m_Name: CameraShaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &325004725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325004724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 519420032}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &325004726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325004724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e8e81031025cc40a52268633e0c002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &338105049
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,11 +954,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 325004725}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -1730,6 +1774,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1228077899982970908, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: cameraShaker
+      value: 
+      objectReference: {fileID: 325004726}
+    - target: {fileID: 3936939987617907676, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: cameraShaker
+      value: 
+      objectReference: {fileID: 325004726}
     - target: {fileID: 4872083543737450150, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_IsActive
@@ -1755,6 +1809,11 @@ PrefabInstance:
       propertyPath: postProcessing
       value: 
       objectReference: {fileID: 435822420}
+    - target: {fileID: 5065680983486582351, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: cameraShaker
+      value: 
+      objectReference: {fileID: 325004726}
     - target: {fileID: 5238486715730037093, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1873,13 +1932,28 @@ PrefabInstance:
     - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: startWeaponIndex
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5238486715730037100, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5780467699901923845, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: cameraShaker
+      value: 
+      objectReference: {fileID: 325004726}
+    - target: {fileID: 6643746810496726270, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: cameraShaker
+      value: 
+      objectReference: {fileID: 325004726}
+    - target: {fileID: 7120680721048109898, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: cameraShaker
+      value: 
+      objectReference: {fileID: 325004726}
     - target: {fileID: 8246238363979621823, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
@@ -1915,6 +1989,11 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].outWeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8327322130738220562, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
+        type: 3}
+      propertyPath: cameraShaker
+      value: 
+      objectReference: {fileID: 325004726}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd, type: 3}
 --- !u!114 &1717709225 stripped

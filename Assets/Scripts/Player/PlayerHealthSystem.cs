@@ -23,6 +23,10 @@ public class PlayerHealthSystem : MonoBehaviour
     [SerializeField] private float maxAbberation = 0.3f;
     [SerializeField] private float hitAbberation = 0.5f;
 
+    [Header("Screen Shake")]
+    [SerializeField] private ShakeTransform cameraShaker;
+    [SerializeField] private ShakeTransformEventData shakeData;
+
     [Header("Settings")]
     [SerializeField] private float breatherTime = 0.5f;
     [SerializeField] private Vector3 breatherMaxSize = new Vector3(10f, 10f, 1f);
@@ -51,8 +55,9 @@ public class PlayerHealthSystem : MonoBehaviour
 
         StartCoroutine(GiveBreathingRoom(breatherMaxSize));
         StartCoroutine(AdjustChromaticAbberationOnHit());
+        cameraShaker.AddShakeEvent(shakeData);
 
-        if(activeWeaponComponents.Count > 0)
+        if (activeWeaponComponents.Count > 0)
         {
             var weapon = activeWeaponComponents.ElementAt(Random.Range(0, activeWeaponComponents.Count));
             activeWeaponComponents.Remove(weapon);
