@@ -50,6 +50,7 @@ public class HUDController : MonoBehaviour
 
     public void AdjustHighlighting()
     {
+        Debug.Log("Adjust highlighting");
         if(highlightedDisplay != null)
             highlightedDisplay.ToggleHighlight();
 

@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
         weaponXRight = weapon.localPosition.x;
         weaponXLeft = weaponXRight * -1;
         ScoreController.instance.ResetScores();
+        AudioManager.instance.Play("CombatMusic");
 
         if(startWeaponIndex == -1)
         {
@@ -147,10 +148,9 @@ public class PlayerController : MonoBehaviour
 
         reloadIndicator.SetActive(false);
 
-        if (healthSystem.activeWeaponComponents.Capacity < 1) {
+        if (healthSystem.activeWeaponComponents.Count >= 1) {
             onSwitchedWeapons?.Invoke();
         }
-
     }
 
     public IEnumerator SwitchWeapons(float timer, int index)
