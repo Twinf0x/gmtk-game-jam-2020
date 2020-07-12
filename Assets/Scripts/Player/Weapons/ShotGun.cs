@@ -24,6 +24,9 @@ public class ShotGun : PlayerWeapon
         {
             return;
         }
+        if (fireSoundName.Length > 0) {
+            AudioManager.instance.Play(fireSoundName, Random.Range(-0.2f, 0.2f));
+        }
 
         timeToNextShot = timeBetweenShots;
 

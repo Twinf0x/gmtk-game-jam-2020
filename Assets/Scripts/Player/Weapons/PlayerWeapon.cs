@@ -12,6 +12,7 @@ public class PlayerWeapon : PlayerHealthComponent
     [SerializeField] internal float bulletSpeed;
     [SerializeField] internal UnityEvent onMagazineEmpty;
     [SerializeField] internal SpriteRenderer weaponRenderer;
+    [SerializeField] internal string fireSoundName;
     [SerializeField] internal ShakeTransformEventData shakeData;
 
     internal float timeBetweenShots;
@@ -49,6 +50,9 @@ public class PlayerWeapon : PlayerHealthComponent
         {
             return;
         }
+        if(fireSoundName.Length > 0) {
+            AudioManager.instance.Play(fireSoundName, Random.Range(-0.2f, 0.2f));
+        }
 
         timeToNextShot = timeBetweenShots;
 
@@ -62,7 +66,7 @@ public class PlayerWeapon : PlayerHealthComponent
         bulletsLeft--;
         if(bulletsLeft <= 0)
         {
-            Debug.Log("Switching weapons");
+            // Debug.Log("Switching weapons");
             onMagazineEmpty?.Invoke();
         }
     }

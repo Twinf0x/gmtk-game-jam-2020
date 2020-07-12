@@ -14,6 +14,7 @@ public class GameOverScreenController : MonoBehaviour
     {
         killsText.text = ScoreController.instance.kills.ToString();
         scoreText.text = ScoreController.instance.currentScore.ToString();
+        AudioManager.instance.Play("Defeat");
         gameOverScreen.SetActive(true);
     }
 

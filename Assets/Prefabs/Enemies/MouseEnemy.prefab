@@ -199,6 +199,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8597026132287239550, guid: 22d867c7e3e1a4e41b80e695896568db,
+        type: 3}
+      propertyPath: deathSoundName
+      value: EnemyHit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d867c7e3e1a4e41b80e695896568db, type: 3}
 --- !u!1 &2138162228562445657 stripped

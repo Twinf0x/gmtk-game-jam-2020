@@ -128,6 +128,11 @@ PrefabInstance:
       propertyPath: damageOnHit
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 6871953703877665180, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: soundName
+      value: RocketHit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec09fe795949b84194627b16d522c15, type: 3}
 --- !u!1 &2941251931686498539 stripped

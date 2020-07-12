@@ -20,6 +20,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 9102536478813291384, guid: 671aa0e657f8f374f8bd3c2bf5783868,
     type: 3}
   timeBetweenSpits: 2.5
+  spitSoundName: Spit
 --- !u!1 &8614083433820284675
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class PlagueMouse : EnemyMouse
     [SerializeField] internal Transform firePoint;
     [SerializeField] internal GameObject bulletPrefab;
     [SerializeField] internal float timeBetweenSpits;
+    [SerializeField] internal string spitSoundName;
     internal float timeToNextSpit;
     internal int bulletAmount = 6;
     internal float bulletSpread = 360f;
@@ -43,6 +44,9 @@ public class PlagueMouse : EnemyMouse
     private void Spit(Vector2 direction) {
         if (timeToNextSpit > 0f) {
             return;
+        }
+        if (spitSoundName.Length > 0) {
+            AudioManager.instance.Play(spitSoundName, Random.Range(-0.2f, 0.2f));
         }
 
         timeToNextSpit = timeBetweenSpits;

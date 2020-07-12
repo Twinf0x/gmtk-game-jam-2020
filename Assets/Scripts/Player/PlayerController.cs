@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
@@ -145,7 +146,11 @@ public class PlayerController : MonoBehaviour
         currentWeapon.weaponRenderer.enabled = true;
 
         reloadIndicator.SetActive(false);
-        onSwitchedWeapons?.Invoke();
+
+        if (healthSystem.activeWeaponComponents.Capacity < 1) {
+            onSwitchedWeapons?.Invoke();
+        }
+
     }
 
     public IEnumerator SwitchWeapons(float timer, int index)
