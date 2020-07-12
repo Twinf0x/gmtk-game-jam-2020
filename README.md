@@ -8,8 +8,9 @@ In "Last Meow Standing" you fight evil Space Mice as a brave Space Cat using an 
 
 ## Controls
 
-- Press WASD or arrow keys to move
-- Use mouse to aim and left mouse to shoot
+- Press `WASD` or arrow keys to move
+- Press `Space` to perform a dash move
+- Use `mouse` to aim and `left mouse` to shoot
 
 ## Health System
 But beware! Every hit you take takes away a random component of your weapon arsenal or movement controls (dash, movement directions).
