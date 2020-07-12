@@ -21,6 +21,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2734807419753315772, guid: 459b732bf6dbae94e8b925786c97ec7a,
     type: 3}
   timeBetweenShots: 1
+  fireSoundName: Fire
 --- !u!1 &7967764695024470806
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class PlayerHealthSystem : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float breatherTime = 0.5f;
     [SerializeField] private Vector3 breatherMaxSize = new Vector3(10f, 10f, 1f);
+    [SerializeField] internal string hitSoundName;
 
     [HideInInspector] public List<PlayerWeapon> activeWeaponComponents;
     [HideInInspector] public List<PlayerMovement> activeMovementComponents;
@@ -50,6 +51,10 @@ public class PlayerHealthSystem : MonoBehaviour
 
             StartCoroutine(TurnOnForSeconds(weaponDamagedHint, 1f));
 
+            if (hitSoundName.Length > 0) {
+                AudioManager.instance.Play(hitSoundName);
+            }
+
             return;
         }
 
@@ -61,6 +66,11 @@ public class PlayerHealthSystem : MonoBehaviour
             movement.onDeactivation?.Invoke();
 
             StartCoroutine(TurnOnForSeconds(movementDamagedHint, 1f));
+
+            if (hitSoundName.Length > 0) {
+                AudioManager.instance.Play(hitSoundName);
+            }
+
             return;
         }
 

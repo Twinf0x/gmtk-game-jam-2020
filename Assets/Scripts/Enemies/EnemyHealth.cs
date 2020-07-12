@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float maxHealth;
     [SerializeField] private GameObject corpsePrefab;
     [SerializeField] private int score;
+    [SerializeField] internal string deathSoundName;
     private float currentHealth;
 
     internal void Start()
@@ -26,6 +27,9 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
+        if (deathSoundName.Length > 0) {
+            AudioManager.instance.Play(deathSoundName);
+        }
         ScoreController.instance.AddKill(score);
         Instantiate(corpsePrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);

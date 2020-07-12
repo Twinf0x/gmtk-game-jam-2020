@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MouseSpawnData
   m_EditorClassIdentifier: 
   prefab: {fileID: 2138162228562445657, guid: b916743126f8c491eaff646b25e87150, type: 3}
-  weight: 6
+  weight: 60

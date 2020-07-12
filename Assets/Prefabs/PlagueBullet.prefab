@@ -18,6 +18,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4652648974950467598, guid: a15ee237a84ae59458112a332436303c,
         type: 3}
+    - target: {fileID: 3147664775472568007, guid: 459b732bf6dbae94e8b925786c97ec7a,
+        type: 3}
+      propertyPath: soundName
+      value: SpitHit
+      objectReference: {fileID: 0}
     - target: {fileID: 5364737244949222221, guid: 459b732bf6dbae94e8b925786c97ec7a,
         type: 3}
       propertyPath: m_LocalScale.x

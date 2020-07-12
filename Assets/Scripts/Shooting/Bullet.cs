@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] internal Rigidbody2D body;
     [SerializeField] internal float damageOnHit;
     [SerializeField] internal string damageTag;
+    [SerializeField] internal string soundName;
 
     [HideInInspector] public Vector2 direction;
     [HideInInspector] public float speed;
@@ -19,7 +20,10 @@ public class Bullet : MonoBehaviour
 
     internal virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        if(hitEffectPrefab != null)
+        if (soundName.Length > 0) {
+            AudioManager.instance.Play(soundName);
+        }
+        if (hitEffectPrefab != null)
         {
             var hitEffect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
             Destroy(hitEffect, 5f);

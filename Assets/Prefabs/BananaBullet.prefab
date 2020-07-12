@@ -142,6 +142,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4666598872965313969, guid: e0a5fe754e41eef43ab52d1e0d34d152,
         type: 3}
+    - target: {fileID: 6871953703877665180, guid: 3ec09fe795949b84194627b16d522c15,
+        type: 3}
+      propertyPath: soundName
+      value: BananaHit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec09fe795949b84194627b16d522c15, type: 3}
 --- !u!1 &6267166713616835337 stripped

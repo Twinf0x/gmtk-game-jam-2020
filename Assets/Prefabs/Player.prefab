@@ -877,6 +877,7 @@ MonoBehaviour:
   movementDamagedHint: {fileID: 0}
   breatherTime: 0.5
   breatherMaxSize: {x: 20, y: 20, z: 1}
+  hitSoundName: PlayerHit
   activeWeaponComponents: []
   activeMovementComponents: []
   isInvincible: 0
@@ -1053,6 +1054,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6640687484936616803}
+  fireSoundName: Catling
 --- !u!114 &3936939987617907676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,6 +1092,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 7848199943627705745}
+  fireSoundName: Fire
 --- !u!114 &8327322130738220562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1128,6 +1131,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 24894562990110756}
+  fireSoundName: BananaThrow
 --- !u!114 &7120680721048109898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,6 +1169,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6863768586591286938}
+  fireSoundName: Fire
 --- !u!114 &5780467699901923845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,6 +1207,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6654211730944066375}
+  fireSoundName: RocketFire
 --- !u!114 &1228077899982970908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,6 +1245,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 6655042449763375754}
+  fireSoundName: Laser
   damagePerSecond: 5000
   castRadius: 0.5
   laserRange: 25

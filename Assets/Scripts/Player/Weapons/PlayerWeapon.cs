@@ -12,6 +12,7 @@ public class PlayerWeapon : PlayerHealthComponent
     [SerializeField] internal float bulletSpeed;
     [SerializeField] internal UnityEvent onMagazineEmpty;
     [SerializeField] internal SpriteRenderer weaponRenderer;
+    [SerializeField] internal string fireSoundName;
 
     internal float timeBetweenShots;
     internal float timeToNextShot;
@@ -47,6 +48,9 @@ public class PlayerWeapon : PlayerHealthComponent
         if(timeToNextShot > 0f || bulletsLeft <= 0)
         {
             return;
+        }
+        if(fireSoundName.Length > 0) {
+            AudioManager.instance.Play(fireSoundName, Random.Range(-0.2f, 0.2f));
         }
 
         timeToNextShot = timeBetweenShots;

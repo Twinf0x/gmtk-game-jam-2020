@@ -9,6 +9,7 @@ public class ArmedMouse : EnemyMouse
     [SerializeField] internal Transform firePoint;
     [SerializeField] internal GameObject bulletPrefab;
     [SerializeField] internal float timeBetweenShots;
+    [SerializeField] internal string fireSoundName;
     internal float timeToNextShot;
 
     private float weaponXRight;
@@ -70,6 +71,9 @@ public class ArmedMouse : EnemyMouse
     private void Shoot(Vector2 direction) {
         if (timeToNextShot > 0f) {
             return;
+        }
+        if (fireSoundName.Length > 0) {
+            AudioManager.instance.Play(fireSoundName, Random.Range(-0.2f, 0.2f));
         }
 
         timeToNextShot = timeBetweenShots;
