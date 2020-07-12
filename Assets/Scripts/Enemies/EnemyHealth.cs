@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private GameObject corpsePrefab;
+    [SerializeField] private int score;
     private float currentHealth;
 
     internal void Start()
@@ -25,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
+        ScoreController.instance.AddKill(score);
         Instantiate(corpsePrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

@@ -162,6 +162,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PistolMouseEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4409824424734900064, guid: b916743126f8c491eaff646b25e87150,
+        type: 3}
+      propertyPath: score
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6019316891534391591, guid: b916743126f8c491eaff646b25e87150, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b916743126f8c491eaff646b25e87150, type: 3}

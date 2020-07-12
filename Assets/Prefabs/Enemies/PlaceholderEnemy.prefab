@@ -148,3 +148,4 @@ MonoBehaviour:
   maxHealth: 100
   corpsePrefab: {fileID: 394684431543527604, guid: ea4a4161305b11f4dbac4eca3b19fa14,
     type: 3}
+  score: 10
