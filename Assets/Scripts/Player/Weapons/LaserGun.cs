@@ -9,38 +9,42 @@ public class LaserGun : PlayerWeapon
     [SerializeField] private float castRadius;
     [SerializeField] private float laserRange;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private LineRenderer renderer;
+    [SerializeField] private new LineRenderer renderer;
+
+    private float timeBetweenBeams;
+    private float timeToNextBeam;
 
     private bool isActive = false;
 
     internal override void Start(){
         base.Start();
+        timeBetweenBeams = 1f / 500f;
+        timeToNextBeam = 0f;
     }
 
     internal override void Update() {
         base.Update();
-
         renderer.enabled = Input.GetKey(KeyCode.Mouse0) && isActive;
+        timeToNextBeam -= Time.deltaTime;
     }
 
     public override void Activate() {
         base.Activate();
-
         isActive = true;
     }
 
-    internal override void OnDeactivation()
-    {
-        base.OnDeactivation();
+    internal override void OnDeactivation() {
         renderer.enabled = false;
         isActive = false;
     }
 
     public override void Fire(Vector2 direction) {
 
-        if(bulletsLeft <= 0) {
+        if(bulletsLeft <= 0 || timeToNextBeam > 0f) {
             return;
         }
+
+        timeToNextBeam = timeBetweenBeams;
 
         RaycastHit2D[] greatestHits = Physics2D.CircleCastAll(firePoint.position, castRadius, direction, Mathf.Infinity, layerMask);
 
