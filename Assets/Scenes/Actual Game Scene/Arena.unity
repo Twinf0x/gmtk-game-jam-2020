@@ -381,9 +381,9 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: EnemyHit
-    clip: {fileID: 8300000, guid: 52994ff8d3fe73c48b879d4bcdf0f95c, type: 3}
-    volume: 0.2
-    pitch: 1
+    clip: {fileID: 8300000, guid: e1d372df888daaa4b8b2ea9374cd31b8, type: 3}
+    volume: 0.1
+    pitch: 0.5
     loop: 0
     source: {fileID: 0}
   - name: BananaHit
@@ -396,6 +396,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ae208628135af87409966e5647740b96, type: 3}
     volume: 0.5
     pitch: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: ShotgunFire
+    clip: {fileID: 8300000, guid: c25cb102fbddbe64a9dad36c23dbb3f6, type: 3}
+    volume: 0.3
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &316961782
@@ -1931,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 5238486715730037094, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}
       propertyPath: startWeaponIndex
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5238486715730037100, guid: cc54a2ed4cf1cbe4eb02b8c09412fbbd,
         type: 3}

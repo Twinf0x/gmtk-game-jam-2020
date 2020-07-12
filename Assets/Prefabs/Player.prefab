@@ -1092,7 +1092,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponRenderer: {fileID: 7848199943627705745}
-  fireSoundName: Fire
+  fireSoundName: ShotgunFire
 --- !u!114 &8327322130738220562
 MonoBehaviour:
   m_ObjectHideFlags: 0
