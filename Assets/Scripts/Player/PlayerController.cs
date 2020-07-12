@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
-        if (dash.active) {
+        if (dash.isActive) {
             body.velocity = direction * dash.speed;
             return;
         }
