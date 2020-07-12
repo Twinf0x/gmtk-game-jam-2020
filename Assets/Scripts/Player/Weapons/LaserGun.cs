@@ -79,7 +79,6 @@ public class LaserGun : PlayerWeapon
         {
             renderer.enabled = false;
             isActive = false;
-            Debug.Log("Switching weapons");
             onMagazineEmpty?.Invoke();
         }
     }
